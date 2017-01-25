@@ -1,0 +1,29 @@
+--------------------------------------------------------------------------------------------------
+#Jan 23
+
+1. Peachy: PHP framework
+This API is fairly new but claims to support a lot more functionalities than the others. 
+However, its in the development phase and few libraries aren't released yet. 
+It can even support Emails and interface to communicate with the databases. 
+The downside is they aren't well documented with the implementation of the API. 
+And it requires contacting the developers in case of qualms. 
+
+2. Pywikibot: Python 
+Very similar to the java wiki bot except for language specific dependencies. 
+
+3. Java Wiki Bot Framework
+This is a Java library with Maven to resolve dependencies. 
+Functionalities and implementation of the tool are well documented.  
+But it stresses on editing the articles and not drawing statistics based on the articles.
+
+--------------------------------------------------------------------------------------------------
+#Jan 12
+
+Discussed Bot functionalities :
+1- Metrics bot: top edited resource of the month, week, etc. This could also be used for contributors.
+2- contribution Network analysis: see who are the people who tend to work together.
+3- news letter bot, summarizing the changes of the last week/ month. To subscribers.
+4- in the wiki the underlying model that captures the semantics is an ontology. 
+   I want to know if some of the definitions of particular wiki pages change. If they do, I want the bot to notify a certain user.
+   More like admin privileges. The changes could be new contributions to the wiki or changes made in the existing data.
+5- Analyzes all pages of the wiki and notifies which of them could be duplicates. Super useful!
