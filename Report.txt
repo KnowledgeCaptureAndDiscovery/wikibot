@@ -5,7 +5,8 @@
 - In depth reading and understanding Maven projects.
 - Creating and configuring new maven project along with IntelliJ and Git integration of the projects.
 - Testing sample code of JWBF on a MediaWiki page.
-- 
+- Extracting articles from wikepedia.
+
 --------------------------------------------------------------------------------------------------
 #Jan 23
 
