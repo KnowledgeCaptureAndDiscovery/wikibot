@@ -1,6 +1,6 @@
 #Feb 13
 - Trying to connect to linked earth wiki.
-- Analyzing and understanding different classes and functions of JWBF.
+- Analyzing and understanding different classes and functions of JWBF. - http://jwbf.sourceforge.net/doc/
 - Also going through the framework code.
 --------------------------------------------------------------------------------------------------
 #Feb 04
