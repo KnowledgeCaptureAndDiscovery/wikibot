@@ -1,3 +1,7 @@
+#Feb 13
+- Trying to connect to linked earth wiki.
+- Analyzing and understanding different classes and functions of JWBF.
+- Also going through the framework code.
 --------------------------------------------------------------------------------------------------
 #Feb 04
 
