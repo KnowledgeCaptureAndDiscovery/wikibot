@@ -1,0 +1,12 @@
+Structure for the Metric Bot
+---------------------------------
+1. Able to access all the articles in the Wiki.
+2. To be able to access all the articles of a certain contributor.
+3. Top contributors for a specific timeline. 
+4. Top contributed articles. (Trending)
+5. Make the bot a daemon that triggers itself dayly (every time stamp t). Maybe every 10 saves.
+5. Create a page with the summary.
+6. Given an ontology, check if the changes of the wiki overlap with ontology definitions and notify it 
+
+
+
