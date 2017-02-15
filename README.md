@@ -9,4 +9,4 @@ Linked Earth Wiki contains numerous records pertaining to the Earth Science data
 -Act as a search tool of contributors and provide links to their pages.
 
 Currently Working On :
-Exploring various Wiki Bot Frameworks for the implementation purpose.
+Trying to access and analyze the datasets on the wiki page using Java Wiki Bot Framework.

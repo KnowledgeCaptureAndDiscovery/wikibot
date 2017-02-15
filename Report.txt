@@ -1,3 +1,7 @@
+#Feb 15
+- Get HTML text of the Main Page or any page.
+- Able to read a specific article page and get the data in string format.
+--------------------------------------------------------------------------------------------------
 #Feb 13
 - Trying to connect to linked earth wiki.
 - Analyzing and understanding different classes and functions of JWBF. - http://jwbf.sourceforge.net/doc/
