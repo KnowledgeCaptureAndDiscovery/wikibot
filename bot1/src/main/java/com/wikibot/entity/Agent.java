@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class Agent {
     private String name;
+    private int getAgentId;
     private ArrayList<Article> contributedArticles;
     private ArrayList<String> workingGroups;
 
@@ -21,11 +22,18 @@ public class Agent {
     }
 
     public ArrayList<Article> getContributedArticles() {
+        if(contributedArticles == null){
+            contributedArticles = new ArrayList<>();
+        }
         return contributedArticles;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getGetAgentId() {
+        return getAgentId;
     }
 
     public void setContributedArticles(ArrayList<Article> contributedArticles) {
@@ -34,6 +42,17 @@ public class Agent {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setGetAgentId(int getAgentId) {
+        this.getAgentId = getAgentId;
+    }
+    
+    public void addContributedArticle(Article a){
+        if(this.contributedArticles==null){
+            contributedArticles = new ArrayList<Article>();
+        }
+        contributedArticles.add(a);
     }
     
     
