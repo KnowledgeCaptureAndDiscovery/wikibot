@@ -6,6 +6,7 @@ package com.wikibot.app;
 import static com.google.common.net.HttpHeaders.USER_AGENT;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.URLEncoder;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -42,7 +43,7 @@ public class Utils {
             }
             return new JSONObject(result.toString());
         }catch (Exception e){
-            System.err.println("Error while getting query:" +query);
+            System.err.println("Error while getting query:" +query +e.getMessage());
             return null;
         }
         

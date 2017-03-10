@@ -3,6 +3,7 @@ package com.wikibot.entity;
 
 import com.wikibot.app.Constants;
 import com.wikibot.app.Utils;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -29,20 +30,23 @@ public class Statistics {
         contributors = new HashMap<>();
         
         //parsing the whole Wiki
-        
+        try{
         //while there are remaining articles, process them.
         JSONObject art = Utils.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE);
         while(hasNext(art)){
-            processArticles(art);
+//            processArticles(art);
             //prepare next batch
-            String cont = art.getJSONObject("query-continue").getJSONObject("allpages").getString("apcontinue");
+            String cont = URLEncoder.encode(art.getJSONObject("query-continue").getJSONObject("allpages").getString("apcontinue"), "UTF-8");
             art = Utils.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE+"&apcontinue="+cont);
-//            System.out.println(cont);
+            System.out.println(cont);
         }
         //the last batch (no "next")
         processArticles(art);
         System.out.println("Number of articles:"+articles.size());
         System.out.println("Number of contributors:"+contributors.size());
+        }catch(Exception e){
+            System.err.println("Error: "+e.getMessage());
+        }
     }
    
     private void processArticles(JSONObject art){
@@ -102,9 +106,9 @@ public class Statistics {
                 this.articles.put(articleID, a);
                 
                 //for doing tests. remove!!
-                if(articles.size()>100){
-                    return;
-                }
+//                if(articles.size()>100){
+//                    return;
+//                }
             }
     }
     
@@ -293,7 +297,7 @@ public class Statistics {
             });
         }
         //tests
-        System.out.println(s.getCollaborationGraph((List<Article>)s.getArticles().values()));
+        System.out.println(s.getCollaborationGraph(new ArrayList(s.getArticles().values())));
         System.out.println("Person articles "+s.getArticlesFromCategory("Category:Person ©").size());
         System.out.println("Dataset articles "+s.getArticlesFromCategory("Category:Dataset ©").size());
         System.out.println("Working group articles "+s.getArticlesFromCategory("Category:Working_Group").size());
@@ -309,7 +313,8 @@ public class Statistics {
 //        
 //        still have to finish the serialization in JSON
 //        String cont = obj.getJSONObject("query-continue").getJSONObject("allpages").getString("apcontinue");
-//        System.out.println(cont);
+//   System.out.println(cont);
+//articles with collaborations
     }
     
 }
