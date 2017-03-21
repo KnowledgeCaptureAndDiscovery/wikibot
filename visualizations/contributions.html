@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wiki statistics</title>
+  <script src="js/d3.min.js"></script>
+  <script src="js/d3pie.min.js"></script>
+</head>
+<body>
+
+<div id="contrib"></div>
+<script>
+	var pie = new d3pie("contrib", {
+		header: {
+			title: {
+				text: "Article contribution",
+				fontSize: 20
+			}
+		},
+		size: {
+			canvasHeight: 300,
+			canvasWidth: 400
+		  },
+		data: {
+			content: [
+				{ label: "Dataset", value: 137 },
+				{ label: "Person", value: 561 },
+				{ label: "Working Group", value: 31},
+				{ label: "Other", value: 2855}
+			]
+		}
+	});
+</script>
+
+
+</body>
+</html>

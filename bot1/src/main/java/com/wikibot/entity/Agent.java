@@ -2,6 +2,9 @@
 package com.wikibot.entity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Class that stores the metadata of a contributor/creator.
@@ -9,9 +12,8 @@ import java.util.ArrayList;
  */
 public class Agent {
     private String name;
-    private int getAgentId;
+    private int agentId;
     private ArrayList<Article> contributedArticles;
-    private ArrayList<String> workingGroups;
 
     public Agent() {
     }
@@ -32,8 +34,55 @@ public class Agent {
         return name;
     }
 
-    public int getGetAgentId() {
-        return getAgentId;
+    public int getAgentId() {
+        return agentId;
+    }
+    
+    public List<String>getContributedCategories(){
+        List<String> contrCategories = new ArrayList<>();
+        getContributedArticles().stream().forEach((art) -> {
+                art.getCategories().stream().forEach((currCat) -> {
+                    if(!contrCategories.contains(currCat)){
+                        contrCategories.add(currCat);
+                    }
+                });
+            });
+        return contrCategories;
+    }
+    
+    /**
+     * Given a category, this method returns the contributed articles of this person to that category.
+     * @param category
+     * @return 
+     */
+    public List<Article> getContributedArticlesFromCategory(String category){
+        return getContributedArticles().stream().filter(a -> a.getCategories().contains(category)).collect(Collectors.toList());
+    }
+    
+    /**
+     * Method that returns a map with the id of a collaborator plus the number of articles they have contributed to together.
+     * @param category category for filtering. null by default
+     * @return 
+     */
+    public HashMap<Integer, Integer> getCollaboratorsAndFrequencies(String category){
+        List<Article> collectionToBrowse = this.contributedArticles;
+        if(category!=null){
+           collectionToBrowse = collectionToBrowse.stream().filter((article)->article.getCategories().contains(category)).collect(Collectors.toList());
+        }
+        HashMap<Integer,Integer> collaboration = new HashMap();
+        collectionToBrowse.stream().forEach((article) -> {
+            article.getContributors().stream().forEach((ag) -> {
+                //System.out.println("Agent "+this.name+ " -- "+ ag.getName() + collaboration.get(ag.getAgentId()));
+                if(collaboration.containsKey(ag.getAgentId())){
+                    collaboration.put(ag.getAgentId(), collaboration.get(ag.getAgentId())+1);
+                }else{
+                    if(ag.getAgentId()!=this.getAgentId()){//we don't want self-colaborations
+                        collaboration.put(ag.getAgentId(), 1);
+                    }
+                }
+            });
+        });
+        return collaboration;
     }
 
     public void setContributedArticles(ArrayList<Article> contributedArticles) {
@@ -45,12 +94,12 @@ public class Agent {
     }
 
     public void setGetAgentId(int getAgentId) {
-        this.getAgentId = getAgentId;
+        this.agentId = getAgentId;
     }
     
     public void addContributedArticle(Article a){
         if(this.contributedArticles==null){
-            contributedArticles = new ArrayList<Article>();
+            contributedArticles = new ArrayList<>();
         }
         contributedArticles.add(a);
     }

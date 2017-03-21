@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wiki statistics</title>
+
+ <script type="text/javascript" src="js/vis.js"></script>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    .mynetwork {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+
+<div id="collaboration" class ="mynetwork"></div>
+<script type="text/javascript">
+var nodes = new vis.DataSet([
+{id: 1, label: 'Admin'},
+{id: 2, label: 'Khider'},
+{id: 3, label: 'Jeg'},
+{id: 4, label: 'Nick mckay'},
+{id: 7, label: 'Kau'},
+{id: 8, label: 'Michaelerb'},
+{id: 9, label: 'Hippo'},
+{id: 11, label: 'Kimcobb'},
+{id: 13, label: 'Jrichey'},
+{id: 18, label: 'Lukas'},
+{id: 21, label: 'Andreasschmittner'},
+{id: 29, label: 'Belenms'},
+{id: 32, label: 'Lucienvg'},
+{id: 34, label: 'Kforourk'},
+{id: 38, label: 'Edassie'},
+{id: 41, label: 'Chrisheiser'},
+{id: 42, label: 'Petebrew'},
+{id: 43, label: 'Christo'},
+{id: 48, label: 'Acsank'},
+{id: 50, label: 'Kdelong'},
+{id: 91, label: 'Pfrancus'},
+{id: 94, label: 'Sjphipps'},
+{id: 99, label: 'Laughlin'},
+{id: 101, label: 'Williamrgray'},
+{id: 106, label: 'SFeakins'}
+]);
+var edges = new vis.DataSet([
+{from: 1, to: 2, value: 35, title: '35 joint articles'},
+{from: 1, to: 3, value: 5, title: '5 joint articles'},
+{from: 1, to: 99, value: 1, title: '1 joint articles'},
+{from: 1, to: 101, value: 1, title: '1 joint articles'},
+{from: 1, to: 38, value: 1, title: '1 joint articles'},
+{from: 1, to: 7, value: 2, title: '2 joint articles'},
+{from: 1, to: 11, value: 1, title: '1 joint articles'},
+{from: 1, to: 13, value: 2, title: '2 joint articles'},
+{from: 1, to: 50, value: 1, title: '1 joint articles'},
+{from: 1, to: 18, value: 1, title: '1 joint articles'},
+{from: 1, to: 21, value: 1, title: '1 joint articles'},
+{from: 1, to: 29, value: 1, title: '1 joint articles'},
+{from: 1, to: 94, value: 1, title: '1 joint articles'},
+{from: 2, to: 32, value: 1, title: '1 joint articles'},
+{from: 2, to: 34, value: 1, title: '1 joint articles'},
+{from: 2, to: 3, value: 20, title: '20 joint articles'},
+{from: 2, to: 99, value: 1, title: '1 joint articles'},
+{from: 2, to: 4, value: 3, title: '3 joint articles'},
+{from: 2, to: 101, value: 1, title: '1 joint articles'},
+{from: 2, to: 38, value: 1, title: '1 joint articles'},
+{from: 2, to: 7, value: 2, title: '2 joint articles'},
+{from: 2, to: 8, value: 1, title: '1 joint articles'},
+{from: 2, to: 9, value: 3, title: '3 joint articles'},
+{from: 2, to: 41, value: 1, title: '1 joint articles'},
+{from: 2, to: 42, value: 2, title: '2 joint articles'},
+{from: 2, to: 106, value: 1, title: '1 joint articles'},
+{from: 2, to: 13, value: 1, title: '1 joint articles'},
+{from: 2, to: 48, value: 1, title: '1 joint articles'},
+{from: 2, to: 18, value: 1, title: '1 joint articles'},
+{from: 2, to: 21, value: 1, title: '1 joint articles'},
+{from: 2, to: 91, value: 1, title: '1 joint articles'},
+{from: 3, to: 32, value: 1, title: '1 joint articles'},
+{from: 3, to: 4, value: 3, title: '3 joint articles'},
+{from: 3, to: 101, value: 1, title: '1 joint articles'},
+{from: 3, to: 38, value: 1, title: '1 joint articles'},
+{from: 3, to: 7, value: 1, title: '1 joint articles'},
+{from: 3, to: 8, value: 1, title: '1 joint articles'},
+{from: 3, to: 42, value: 2, title: '2 joint articles'},
+{from: 3, to: 106, value: 1, title: '1 joint articles'},
+{from: 3, to: 43, value: 1, title: '1 joint articles'},
+{from: 3, to: 11, value: 1, title: '1 joint articles'},
+{from: 3, to: 13, value: 1, title: '1 joint articles'},
+{from: 3, to: 48, value: 2, title: '2 joint articles'},
+{from: 3, to: 18, value: 1, title: '1 joint articles'},
+{from: 3, to: 21, value: 1, title: '1 joint articles'},
+{from: 3, to: 91, value: 1, title: '1 joint articles'},
+{from: 4, to: 32, value: 1, title: '1 joint articles'},
+{from: 4, to: 106, value: 1, title: '1 joint articles'},
+{from: 4, to: 91, value: 1, title: '1 joint articles'},
+{from: 7, to: 18, value: 1, title: '1 joint articles'},
+{from: 7, to: 101, value: 1, title: '1 joint articles'},
+{from: 7, to: 13, value: 1, title: '1 joint articles'},
+{from: 13, to: 18, value: 1, title: '1 joint articles'},
+{from: 13, to: 101, value: 1, title: '1 joint articles'},
+{from: 18, to: 101, value: 1, title: '1 joint articles'},
+{from: 42, to: 48, value: 1, title: '1 joint articles'},
+{from: 91, to: 106, value: 1, title: '1 joint articles'}
+]);
+  var container = document.getElementById('collaboration');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {};
+  var network = new vis.Network(container, data, options);
+</script>
+
+
+</body>
+</html>
