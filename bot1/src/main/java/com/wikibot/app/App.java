@@ -1,25 +1,10 @@
 package com.wikibot.app;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.common.collect.ImmutableList;
-import java.util.Iterator;
-import jdk.nashorn.internal.parser.JSONParser;
-import net.sourceforge.jwbf.core.actions.GetPage;
-import net.sourceforge.jwbf.core.actions.RequestBuilder;
-import net.sourceforge.jwbf.core.actions.util.HttpAction;
-import net.sourceforge.jwbf.core.bots.HttpBot;
-import net.sourceforge.jwbf.core.contentRep.Article;
-import net.sourceforge.jwbf.core.contentRep.SimpleArticle;
-import net.sourceforge.jwbf.mediawiki.bots.MediaWikiBot;
-import net.sourceforge.jwbf.mediawiki.contentRep.CategoryItem;
 
-import java.util.Locale;
-import net.sourceforge.jwbf.mediawiki.MediaWiki;
-import net.sourceforge.jwbf.mediawiki.actions.editing.GetRevision;
-import static net.sourceforge.jwbf.mediawiki.actions.editing.GetRevision.*;
-import net.sourceforge.jwbf.mediawiki.actions.meta.GetVersion;
-import net.sourceforge.jwbf.mediawiki.actions.queries.AllPageTitles;
-import net.sourceforge.jwbf.mediawiki.actions.queries.CategoryMembersFull;
+import com.wikibot.entity.Histogram;
+import net.sourceforge.jwbf.core.contentRep.Article;
+import net.sourceforge.jwbf.mediawiki.bots.MediaWikiBot;
 
 /**
  * Hello world!
@@ -50,7 +35,7 @@ public class App
 //        mediaArticle.getRevisionId()
 //        mediaWikiBot.
 //        AllPageTitles t = new AllPageTitles(mediaWikiBot);
-//        CategoryMembersFull t = new CategoryMembersFull(mediaWikiBot, "Person_©");
+//        CategoryMembersFull t = new CategoryMembersFull(mediaWikiBot, "Person_ï¿½");
 //        Iterator<CategoryItem> it = t.iterator();
 //        while(it.hasNext()){
 //            CategoryItem b = it.next();
@@ -65,9 +50,11 @@ public class App
     public static void main(String[] args) {
 
         App obj = new App();
-        obj.getSampleArticle("MD982181.Khider.2014");
+        //obj.getSampleArticle("MD982181.Khider.2014");
 //        obj.getSampleArticle("D._Khider");
 //        obj.getSampleArticle("Category:Marine_Sediment_Working_Group");
+        Histogram test = new Histogram();
+        test.listAllDataSets();
     }
 
 }
