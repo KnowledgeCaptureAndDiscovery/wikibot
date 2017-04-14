@@ -11,9 +11,13 @@ import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -90,4 +94,39 @@ public class Utils {
 		}
 		
  	}
+ 	
+ 	public static JSONObject postFuncWithParams(String query, String cookie, String token){
+ 		 URL url;
+		try {
+			url = new URL(query);
+			Map<String,Object> params = new LinkedHashMap<>();
+	         params.put("token", token);
+	         StringBuilder postData = new StringBuilder();
+	         for (Map.Entry<String,Object> param : params.entrySet()) {
+	             if (postData.length() != 0) postData.append('&');
+	             postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
+	             postData.append('=');
+	             postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
+	         }
+	         byte[] postDataBytes = postData.toString().getBytes("UTF-8");
+
+	         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+	         conn.setRequestMethod("POST");
+	         conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+	         conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+	         conn.setDoOutput(true);
+	         conn.getOutputStream().write(postDataBytes);
+
+	         Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+	         JSONObject array = new JSONObject(new JSONTokener(in));
+	         return array;
+	         
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			 System.err.println("Error while getting POST object with token as param:" +query +e.getMessage());
+	         return null;
+		}
+         
+ 	}
+ 	
 }
