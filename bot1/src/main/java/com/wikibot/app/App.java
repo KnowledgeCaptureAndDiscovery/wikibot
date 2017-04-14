@@ -1,8 +1,12 @@
 package com.wikibot.app;
 
+import java.io.IOException;
+
 import com.google.common.collect.ImmutableList;
 
 import com.wikibot.entity.Histogram;
+import com.wikibot.entity.Login;
+
 import net.sourceforge.jwbf.core.contentRep.Article;
 import net.sourceforge.jwbf.mediawiki.bots.MediaWikiBot;
 
@@ -47,14 +51,18 @@ public class App
 //        System.out.println(simpleArticle.getText().toString());
 //        System.out.println("-----------------------");
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         App obj = new App();
         //obj.getSampleArticle("MD982181.Khider.2014");
 //        obj.getSampleArticle("D._Khider");
 //        obj.getSampleArticle("Category:Marine_Sediment_Working_Group");
-        Histogram test = new Histogram();
-        test.listAllDataSets();
+        
+      
+        Login bot = new Login("testBot", "testBot123");
+        bot.login();
+        bot.edit();
+        //test.listAllDataSets();
     }
 
 }
