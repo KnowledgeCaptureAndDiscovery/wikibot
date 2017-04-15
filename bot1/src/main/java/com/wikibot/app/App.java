@@ -1,6 +1,7 @@
 package com.wikibot.app;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import com.google.common.collect.ImmutableList;
 
@@ -57,11 +58,13 @@ public class App
         //obj.getSampleArticle("MD982181.Khider.2014");
 //        obj.getSampleArticle("D._Khider");
 //        obj.getSampleArticle("Category:Marine_Sediment_Working_Group");
+        Histogram test = new Histogram();
+        String text = URLEncoder.encode(test.getRecentChanges(10), "UTF-8");
         
-      
+        // test.listAllDataSets();
         Login bot = new Login("testBot", "testBot123");
         bot.login();
-        bot.edit();
+        bot.edit(text);
         //test.listAllDataSets();
     }
 

@@ -4,7 +4,7 @@ package com.wikibot.entity;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
 /**
  * Class that stores the metadata of a contributor/creator.
@@ -38,7 +38,7 @@ public class Agent {
         return agentId;
     }
     
-    public List<String>getContributedCategories(){
+  /*  public List<String>getContributedCategories(){
         List<String> contrCategories = new ArrayList<>();
         getContributedArticles().stream().forEach((art) -> {
                 art.getCategories().stream().forEach((currCat) -> {
@@ -48,23 +48,23 @@ public class Agent {
                 });
             });
         return contrCategories;
-    }
+    }*/
     
     /**
      * Given a category, this method returns the contributed articles of this person to that category.
      * @param category
      * @return 
      */
-    public List<Article> getContributedArticlesFromCategory(String category){
+   /* public List<Article> getContributedArticlesFromCategory(String category){
         return getContributedArticles().stream().filter(a -> a.getCategories().contains(category)).collect(Collectors.toList());
     }
-    
+   */
     /**
      * Method that returns a map with the id of a collaborator plus the number of articles they have contributed to together.
      * @param category category for filtering. null by default
      * @return 
      */
-    public HashMap<Integer, Integer> getCollaboratorsAndFrequencies(String category){
+  /*  public HashMap<Integer, Integer> getCollaboratorsAndFrequencies(String category){
         List<Article> collectionToBrowse = this.contributedArticles;
         if(category!=null){
            collectionToBrowse = collectionToBrowse.stream().filter((article)->article.getCategories().contains(category)).collect(Collectors.toList());
@@ -84,7 +84,7 @@ public class Agent {
         });
         return collaboration;
     }
-
+*/
     public void setContributedArticles(ArrayList<Article> contributedArticles) {
         this.contributedArticles = contributedArticles;
     }

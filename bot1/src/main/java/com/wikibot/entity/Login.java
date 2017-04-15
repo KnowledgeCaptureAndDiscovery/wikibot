@@ -51,7 +51,7 @@ public class Login {
 		System.out.println(Utils.doPOSTJSON(user, this.lgcookie).toString());
 	}	
 	
-	public void edit(){
+	public void edit(String edittext){
 		String tokenQuery2 = WIKI_NAME + FORMAT_AND_API
 				+ "&format=json&meta=tokens";
 		JSONObject getToken2 = Utils.doPOSTJSON(tokenQuery2, this.getLgcookie());
@@ -60,7 +60,7 @@ public class Login {
 		System.out.println(token2);
 
 		String editQuery = WIKI_NAME
-				+ "api.php?action=edit&title=Test&text=Hello&format=json";
+				+ "api.php?action=edit&title=Test&section=new&sectiontitle=EditAPITest&text="+edittext+"&format=json";
 		JSONObject edit = Utils.postFuncWithParams(editQuery, this.getLgcookie(), token2);
 		System.out.println(edit);
 	}
