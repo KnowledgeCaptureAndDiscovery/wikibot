@@ -64,4 +64,22 @@ public class Login {
 		JSONObject edit = Utils.postFuncWithParams(editQuery, this.getLgcookie(), token2);
 		System.out.println(edit);
 	}
+
+	public void undoRevisions(int revid, boolean undoafter){
+		String tokenQuery2 = WIKI_NAME + FORMAT_AND_API
+				+ "&format=json&meta=tokens";
+		JSONObject getToken2 = Utils.doPOSTJSON(tokenQuery2, this.getLgcookie());
+		String token2 = getToken2.getJSONObject("query")
+				.getJSONObject("tokens").get("csrftoken").toString();
+		System.out.println(token2);
+		
+		String undoQuery = WIKI_NAME + "api.php?action=edit&title=Test&format=json";
+		
+		if(undoafter)
+			undoQuery += "&undoafter="+revid+"&text=Hello";
+		else
+			undoQuery += "&undo="+revid;
+		JSONObject edit = Utils.postFuncWithParams(undoQuery, this.getLgcookie(), token2);
+		System.out.println(edit);
+	}
 }
