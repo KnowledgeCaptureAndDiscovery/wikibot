@@ -6,7 +6,7 @@ public class Bot {
 	 * @param args
 	 */
 	
-	String sessionID;
+	public static String sessionID;
 	String username;
 	String password;
 	
