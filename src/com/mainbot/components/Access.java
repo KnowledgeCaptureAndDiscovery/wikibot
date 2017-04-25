@@ -20,8 +20,8 @@ public class Access {
 		JSONObject result;
 		switch(connType){
 			case '1': return conn.doGETJSON(query);
-			case '2': return conn.doPOSTJSON(query,Bot.sessionID);
-			case '3': return conn.postFuncWithParams(query, Bot.sessionID, "token");
+			case '2': return conn.doPOSTJSON(query,"");
+			case '3': return conn.postFuncWithParams(query, "", "token");
 		}
 		return null;
 	}
@@ -61,22 +61,28 @@ public class Access {
 		
 	}	
 	
-	public String getRecentChanges(int limit){
+	public static String getRecentChanges(int limit){
 		StringBuilder result = new StringBuilder();
+		
+		Constants.params.put("action", "query");
+		Constants.params.put("list", "recentchanges");
+		Constants.params.put("rclimit", String.valueOf(limit));
+		Constants.params.put("continue", "");
+		
 		
 		String listChangesQuery = WIKI_NAME + FORMAT_AND_API + "&list=recentchanges&continue&rclimit="+ limit;
 		JSONArray array;
 		try {
-			JSONObject latestEdits = makeQuery(listChangesQuery,1);
+			JSONObject latestEdits = conn.doGETJSON(listChangesQuery);
 			array = latestEdits.getJSONObject("query").getJSONArray("recentchanges");
 			
-			for(int i=0; i< array.length(); i++){
+/*			for(int i=0; i< array.length(); i++){
 				JSONObject obj = array.getJSONObject(i);
 				result.append("\nPage Title : ").append(obj.get("title"));
 				result.append("\tRevision Id: ").append(obj.get("revid"));
 				result.append("\tTimeStamp: ").append(obj.get("timestamp"));
 			}
-			return result.toString();
+*/			return array.toString();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
