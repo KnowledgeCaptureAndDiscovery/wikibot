@@ -1,6 +1,11 @@
 package com.mainbot.components;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -69,7 +74,8 @@ public class Access {
 		
 		Constants.params.put("action", "query");
 		Constants.params.put("list", "recentchanges");
-		Constants.params.put("rclimit", String.valueOf(limit));
+		if(limit > 0)
+			Constants.params.put("rclimit", String.valueOf(limit));
 		Constants.params.put("continue", "");
 		
 		
@@ -81,7 +87,11 @@ public class Access {
 			
 			for(int i=0; i< array.length(); i++){
 				JSONObject obj = array.getJSONObject(i);
-				Revision rev = new Revision(obj.get("pageid").toString(), obj.get("timestamp").toString(), obj.get("revid").toString(), obj.get("old_revid").toString(), obj.get("type").toString());
+				Revision rev = new Revision(obj.get("pageid").toString(), 
+									obj.get("timestamp").toString(), 
+									obj.get("revid").toString(), 
+									obj.get("old_revid").toString(), 
+									obj.get("type").toString());
 				revList.add(rev);
 			}
 		return revList;
@@ -90,5 +100,24 @@ public class Access {
 		}
 		
 		return null;
+	}
+	
+	public static ArrayList getChangesPastNDays(int numOfDays){
+		ArrayList<Revision> revList = new ArrayList<>();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Calendar cal = new GregorianCalendar();
+		Date today = new Date();		
+		cal.setTime(today);
+		cal.add(Calendar.DAY_OF_MONTH, numOfDays*-1);
+		Date from = cal.getTime();
+		String end = dateFormat.format(today).replace(' ', 'T')+'Z';
+		
+		String start = dateFormat.format(from).replace(' ', 'T')+'Z';
+		
+		Constants.params.put("action", "query");
+		Constants.params.put("list", "recentchanges");
+		Constants.params.put("rcstart", "");
+		Constants.params.put("rcend", "");
+		return revList;
 	}
 }

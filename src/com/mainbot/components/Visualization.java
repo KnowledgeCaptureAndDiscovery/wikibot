@@ -18,7 +18,7 @@ public class Visualization {
 	        result += " on " + obj.getTimestampDate();
 	        result += " at " + obj.getTimestampTime() + "<br/>\n";
         }
-        result += "</p>";
+        result += "</p><br/><br/>";
         this.viewText = result;
         this.section = "histogram";
         System.out.println(result);
