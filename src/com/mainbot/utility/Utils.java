@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import com.mainbot.main.Bot;
 
 
-public class Utils extends ConnectionRequests{
+public class Utils{
 	
 	public static String queryFormulation(){
 		StringBuilder queryString = new StringBuilder();
@@ -25,7 +25,7 @@ public class Utils extends ConnectionRequests{
 		Constants.params.put("lgname", mainbot.getUsername());
 		
 		String tokenQuery = queryFormulation();
-		JSONObject getToken = doPOSTJSON(tokenQuery, "");
+		JSONObject getToken = ConnectionRequests.doPOSTJSON(tokenQuery, "");
 		System.out.println(getToken);
 		
 		String token = getToken.getJSONObject("login").get("token").toString();
@@ -40,7 +40,7 @@ public class Utils extends ConnectionRequests{
 		Constants.params.put("lgtoken", token);
 		
 		String loginQuery = queryFormulation();
-		JSONObject login = doPOSTJSON(loginQuery, mainbot.getSessionID());
+		JSONObject login = ConnectionRequests.doPOSTJSON(loginQuery, mainbot.getSessionID());
 		System.out.println(login);
 
 		/* Assertion to check if the login is successful */
@@ -53,6 +53,6 @@ public class Utils extends ConnectionRequests{
 		Constants.params.put("assert", userType);
 		String user = queryFormulation();
 		
-//		System.out.println(doPOSTJSON(user, mainbot.getSessionID()).toString());		
+		System.out.println(ConnectionRequests.doPOSTJSON(user, mainbot.getSessionID()).toString());		
 	}
 }

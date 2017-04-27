@@ -1,9 +1,12 @@
 package com.mainbot.components;
 
+import java.util.ArrayList;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.mainbot.dataobjects.Revision;
 import com.mainbot.main.Bot;
 import com.mainbot.utility.*;
 import static com.mainbot.utility.Constants.FORMAT_AND_API;
@@ -61,8 +64,8 @@ public class Access {
 		
 	}	
 	
-	public static String getRecentChanges(int limit){
-		StringBuilder result = new StringBuilder();
+	public static ArrayList getRecentChanges(int limit){
+		ArrayList<Revision> revList = new ArrayList<>();
 		
 		Constants.params.put("action", "query");
 		Constants.params.put("list", "recentchanges");
@@ -76,13 +79,12 @@ public class Access {
 			JSONObject latestEdits = conn.doGETJSON(listChangesQuery);
 			array = latestEdits.getJSONObject("query").getJSONArray("recentchanges");
 			
-/*			for(int i=0; i< array.length(); i++){
+			for(int i=0; i< array.length(); i++){
 				JSONObject obj = array.getJSONObject(i);
-				result.append("\nPage Title : ").append(obj.get("title"));
-				result.append("\tRevision Id: ").append(obj.get("revid"));
-				result.append("\tTimeStamp: ").append(obj.get("timestamp"));
+				Revision rev = new Revision(obj.get("pageid").toString(), obj.get("timestamp").toString(), obj.get("revid").toString(), obj.get("old_revid").toString(), obj.get("type").toString());
+				revList.add(rev);
 			}
-*/			return array.toString();
+		return revList;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
