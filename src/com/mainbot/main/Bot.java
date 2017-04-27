@@ -76,6 +76,7 @@ public class Bot {
 		Utils util = new Utils();
 		util.login(mainbot);
 		createHistogram(mainbot);
+		//check the working of ssh keys
 	}
 
 }
