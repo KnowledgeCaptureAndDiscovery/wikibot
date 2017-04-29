@@ -1,5 +1,7 @@
 package com.mainbot.components;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -20,20 +22,21 @@ import static com.mainbot.utility.Constants.WIKI_NAME;
 public class Access {
 
 	static ConnectionRequests conn = new ConnectionRequests();
+	static Utils util = new Utils();
 	/*
 	 * @params query Query string for the api
 	 * @params connType Type of Connection. Get, POST or POST with params*/
-	
+
 	public static JSONObject makeQuery(String query, int connType){
 		JSONObject result;
 		switch(connType){
-			case '1': return conn.doGETJSON(query);
-			case '2': return conn.doPOSTJSON(query,"");
-			case '3': return conn.postFuncWithParams(query, "", "token");
+		case '1': return conn.doGETJSON(query);
+		case '2': return conn.doPOSTJSON(query,"");
+		case '3': return conn.postFuncWithParams(query, "", "token");
 		}
 		return null;
 	}
-	
+
 	public void listAllDataSets() throws JSONException {
 		JSONObject datasets = makeQuery(Constants.QUERY_ALL_DATASET, 1);
 		processDatasets(datasets);
@@ -66,58 +69,96 @@ public class Access {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}	
-	
-	public static ArrayList getRecentChanges(int limit){
+
+	public static ArrayList getRecentChanges(int limit) throws UnsupportedEncodingException{
 		ArrayList<Revision> revList = new ArrayList<>();
-		
+
 		Constants.params.put("action", "query");
 		Constants.params.put("list", "recentchanges");
+		Constants.params.put("rcprop", URLEncoder.encode("title|ids|sizes|flags|user|timestamp", "UTF-8"));
 		if(limit > 0)
 			Constants.params.put("rclimit", String.valueOf(limit));
-		Constants.params.put("continue", "");
-		
-		
-		String listChangesQuery = WIKI_NAME + FORMAT_AND_API + "&list=recentchanges&continue&rclimit="+ limit;
+
+
+		String listChangesQuery = Utils.queryFormulation();
 		JSONArray array;
 		try {
 			JSONObject latestEdits = conn.doGETJSON(listChangesQuery);
 			array = latestEdits.getJSONObject("query").getJSONArray("recentchanges");
-			
+
 			for(int i=0; i< array.length(); i++){
 				JSONObject obj = array.getJSONObject(i);
-				Revision rev = new Revision(obj.get("pageid").toString(), 
-									obj.get("timestamp").toString(), 
-									obj.get("revid").toString(), 
-									obj.get("old_revid").toString(), 
-									obj.get("type").toString());
+				int pageid = obj.getInt("pageid");
+				int revid = obj.getInt("revid");
+				int old_revid = obj.getInt("old_revid");
+				String title = obj.getString("title");
+				String user = obj.getString("user");
+				String timestamp = obj.getString("timestamp");
+				String type = obj.getString("type");	
+
+
+				Revision rev = new Revision(pageid, title, user, timestamp, revid, old_revid, type);
 				revList.add(rev);
 			}
-		return revList;
+			return revList;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return null;
 	}
-	
-	public static ArrayList getChangesPastNDays(int numOfDays){
+
+	public static ArrayList getChangesPastNDays(int numOfDays) throws JSONException, UnsupportedEncodingException{
 		ArrayList<Revision> revList = new ArrayList<>();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Calendar cal = new GregorianCalendar();
-		Date today = new Date();		
+		Date today = new Date();
+		String start = dateFormat.format(today).replace(' ', 'T')+'Z';
 		cal.setTime(today);
-		cal.add(Calendar.DAY_OF_MONTH, numOfDays*-1);
+		cal.add(Calendar.DAY_OF_MONTH, -1*numOfDays);
 		Date from = cal.getTime();
-		String end = dateFormat.format(today).replace(' ', 'T')+'Z';
-		
-		String start = dateFormat.format(from).replace(' ', 'T')+'Z';
-		
+		String end = dateFormat.format(from).replace(' ', 'T')+'Z';
+
 		Constants.params.put("action", "query");
 		Constants.params.put("list", "recentchanges");
-		Constants.params.put("rcstart", "");
-		Constants.params.put("rcend", "");
+		Constants.params.put("rcprop", URLEncoder.encode("title|ids|sizes|flags|user|timestamp","UTF-8"));
+		Constants.params.put("rcstart", start);
+		Constants.params.put("rcend", end);
+
+
+
+		String listChangesQuery = Utils.queryFormulation();
+		System.out.println(listChangesQuery);
+		JSONArray array;
+		JSONObject latestEdits = conn.doGETJSON(listChangesQuery);
+
+		while(util.hasNext(latestEdits)){
+			array = latestEdits.getJSONObject("query").getJSONArray("recentchanges");
+			for(int i=0; i< array.length(); i++){
+				JSONObject obj = array.getJSONObject(i);
+				int pageid = obj.getInt("pageid");
+				int revid = obj.getInt("revid");
+				int old_revid = obj.getInt("old_revid");
+				String title = obj.getString("title");
+				String user = obj.getString("user");
+				String timestamp = obj.getString("timestamp");
+				String type = obj.getString("type");	
+
+
+				Revision rev = new Revision(pageid, title, user, timestamp, revid, old_revid, type);
+				revList.add(rev);
+			}
+			//prepare next batch
+			String cont = URLEncoder.encode(latestEdits.getJSONObject("continue").getString("rccontinue"), "UTF-8");
+			latestEdits = conn.doGETJSON(listChangesQuery+"&rccontinue="+cont);
+		}
+		System.out.println(revList.size());
+
 		return revList;
+
 	}
+
+
 }

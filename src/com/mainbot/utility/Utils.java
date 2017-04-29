@@ -55,4 +55,13 @@ public class Utils{
 		
 		System.out.println(ConnectionRequests.doPOSTJSON(user, mainbot.getSessionID()).toString());		
 	}
+	
+	public static boolean hasNext(JSONObject o){
+        try{
+            o.getJSONObject("continue");
+            return true;
+        }catch(JSONException e){
+            return false;
+        }
+    }
 }

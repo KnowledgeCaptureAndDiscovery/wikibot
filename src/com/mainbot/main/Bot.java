@@ -1,5 +1,6 @@
 package com.mainbot.main;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -56,11 +57,12 @@ public class Bot {
 		this.password = password;
 	}
 	
-	public static void createHistogram(Bot mainbot) throws JSONException, UnsupportedEncodingException{
-		ArrayList<Revision> revisionList = Access.getRecentChanges(10); //get the revision list
-		Visualization view = new Visualization();
+	public static void createHistogram(Bot mainbot) throws JSONException, IOException{
+		ArrayList<Revision> revisionList;
 		Edit edit = new Edit();
-		view.recentChangeView(revisionList); // create view for the recent revisions
+		Visualization view = new Visualization();
+		revisionList = Access.getRecentChanges(10); //get the last 100 changes
+		view.recentChangeView(revisionList, "histogram");
 		int revid = edit.edit(view,mainbot); //edit the wiki
 		
 		
@@ -68,15 +70,25 @@ public class Bot {
 		String erase = scanner.next();
 		if(!erase.isEmpty())
 			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
+/*
+		revisionList = Access.getChangesPastNDays(30); //get the revision list for past 30 days
+		view.recentChangeView(revisionList, "histogram2",30);
+		int revid2 = edit.edit(view,mainbot); //edit the wiki
+		
+		
+		erase = scanner.next();
+		if(!erase.isEmpty())
+			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
+*/
 	}
 	
-	public static void main(String[] args) throws JSONException, UnsupportedEncodingException {
+	public static void main(String[] args) throws JSONException, IOException {
 		// TODO Auto-generated method stub
 		Bot mainbot = new Bot("testBot", "testBot123");
 		Utils util = new Utils();
 		util.login(mainbot);
 		createHistogram(mainbot);
-		//check the working of ssh keys
+		
 	}
 
 }
