@@ -1,19 +1,15 @@
 package com.mainbot.main;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import com.mainbot.components.Access;
 import com.mainbot.components.Edit;
 import com.mainbot.components.Visualization;
 import com.mainbot.dataobjects.Revision;
-import com.mainbot.utility.ConnectionRequests;
-import com.mainbot.utility.Constants;
 import com.mainbot.utility.Utils;
 
 public class Bot {
