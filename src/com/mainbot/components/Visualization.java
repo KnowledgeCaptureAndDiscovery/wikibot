@@ -61,7 +61,7 @@ public class Visualization {
         htmlResult += "\n</script>\n</body>\n</html>";
 
         String filename = "changes-pastnchanges.html";
-        BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/home/neha/DR/wikibot/visualizations/"+filename)));
+        BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/home/neha/git/wikibot/visualizations/"+filename)));
         writer.write(htmlResult);
         writer.close();
         
@@ -119,7 +119,7 @@ public class Visualization {
         htmlResult += "\n</script>\n</body>\n</html>";
 
         String filename = "changes-pastndays.html";
-        BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/home/neha/DR/wikibot/visualizations/"+filename)));
+        BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/home/neha/git/wikibot/visualizations/"+filename)));
         writer.write(htmlResult);
         writer.close();
         
