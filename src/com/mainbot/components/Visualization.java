@@ -37,7 +37,7 @@ public class Visualization {
         }
         result += "</p><br/><br/>";
         
-        String htmlResult = "";
+       /* String htmlResult = "";
         htmlResult += "<!DOCTYPE html>";
         htmlResult += "\n<html>\n<head>";
         htmlResult += "\n<title>Histogram</title>";
@@ -61,7 +61,7 @@ public class Visualization {
         htmlResult += "\n</script>\n</body>\n</html>";
 
         String filename = "changes-pastnchanges.html";
-        BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/home/neha/git/wikibot/visualizations/"+filename)));
+        BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/home/neha/DR/wikibot/visualizations/"+filename)));
         writer.write(htmlResult);
         writer.close();
         
@@ -74,8 +74,8 @@ public class Visualization {
            
         }
 
-        this.viewText = result;
-        this.section = "histogram";
+*/        this.viewText = result;
+        this.section = "Histogram";
         System.out.println(result);
 	}
 	
@@ -126,14 +126,14 @@ public class Visualization {
         if(!graphName.isEmpty()){
         	result += "{{#widget:Iframe";
         	result += "|url=https://nehasuvarna.github.io/wikibot/visualizations/"+filename;
-        	result += "|width=410";
+        	result += "|width=610";
             result += "|height=342";
             result += "|border=0}}";
            
         }
 
         this.viewText = result;
-        this.section = "histogram";
+        this.section = "Histogram";
         System.out.println(result);
 
 	}
