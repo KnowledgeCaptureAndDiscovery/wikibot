@@ -59,7 +59,7 @@ public class Bot {
 		Visualization view = new Visualization();
 		Visualization view2 = new Visualization();
 		revisionList = Access.getRecentChanges(10); //get the last 10 changes
-		view.recentChangeView(revisionList, "histogram");
+		view.recentChangeView(revisionList);
 		int revid = edit.edit(view,mainbot); //edit the wiki
 		
 		
@@ -69,8 +69,8 @@ public class Bot {
 			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
 */
 		revisionList.clear();
-		revisionList = Access.getChangesPastNDays(30); //get the revision list for past 30 days
-		view2.changesPastNDaysView(revisionList, "histogram2",30);
+		revisionList = Access.getChangesPastNDays(30, "Category:Working_Group"); //get the revision list for past 30 days
+		view2.changesPastNDaysView(revisionList,30);
 		int revid2 = edit.edit(view2,mainbot); //edit the wiki
 		
 		
