@@ -59,25 +59,25 @@ public class Bot {
 		Visualization view = new Visualization();
 		Visualization view2 = new Visualization();
 		revisionList = Access.getRecentChanges(10); //get the last 10 changes
-		view.recentChangeView(revisionList, "histogram");
+		view.recentChangeView(revisionList);
 		int revid = edit.edit(view,mainbot); //edit the wiki
 		
 		
-		Scanner scanner = new Scanner(System.in);
+		/*Scanner scanner = new Scanner(System.in);
 		String erase = scanner.next();
 		if(!erase.isEmpty())
 			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
-
+*/
 		revisionList.clear();
-		revisionList = Access.getChangesPastNDays(30); //get the revision list for past 30 days
-		view2.changesPastNDaysView(revisionList, "histogram2",30);
-		int revid2 = edit.edit(view,mainbot); //edit the wiki
+		revisionList = Access.getChangesPastNDays(30, "Category:Working_Group"); //get the revision list for past 30 days
+		view2.changesPastNDaysView(revisionList,30);
+		int revid2 = edit.edit(view2,mainbot); //edit the wiki
 		
 		
-		erase = scanner.next();
+/*		erase = scanner.next();
 		if(!erase.isEmpty())
 			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
-
+*/
 	}
 	
 	public static void main(String[] args) throws JSONException, IOException {

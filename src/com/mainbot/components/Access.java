@@ -23,6 +23,7 @@ public class Access {
 
 	static ConnectionRequests conn = new ConnectionRequests();
 	static Utils util = new Utils();
+	
 	/*
 	 * @params query Query string for the api
 	 * @params connType Type of Connection. Get, POST or POST with params*/
@@ -110,7 +111,7 @@ public class Access {
 		return null;
 	}
 
-	public static ArrayList getChangesPastNDays(int numOfDays) throws JSONException, UnsupportedEncodingException{
+	public static ArrayList getChangesPastNDays(int numOfDays, String categoryName) throws JSONException, UnsupportedEncodingException{
 		ArrayList<Revision> revList = new ArrayList<>();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Calendar cal = new GregorianCalendar();
@@ -133,12 +134,17 @@ public class Access {
 		System.out.println(listChangesQuery);
 		JSONArray array;
 		JSONObject latestEdits = conn.doGETJSON(listChangesQuery);
-
+		ArrayList<Integer> articleIDList = new ArrayList<>(); 
+		if(categoryName != ""){
+			articleIDList = getArticlesFromCategory(categoryName);
+		}
+		
 		while(util.hasNext(latestEdits)){
 			array = latestEdits.getJSONObject("query").getJSONArray("recentchanges");
 			for(int i=0; i< array.length(); i++){
 				JSONObject obj = array.getJSONObject(i);
 				int pageid = obj.getInt("pageid");
+				if(articleIDList.size() > 0 && !articleIDList.contains(pageid)) continue;
 				int revid = obj.getInt("revid");
 				int old_revid = obj.getInt("old_revid");
 				String title = obj.getString("title");
@@ -148,6 +154,7 @@ public class Access {
 
 
 				Revision rev = new Revision(pageid, title, user, timestamp, revid, old_revid, type);
+				System.out.println(rev.getArticle().getName());
 				revList.add(rev);
 			}
 			//prepare next batch
@@ -158,6 +165,29 @@ public class Access {
 
 		return revList;
 
+	}
+
+	public static ArrayList getArticlesFromCategory(String categoryName){
+		ArrayList<Integer> articleIDList = new ArrayList<>();
+		Constants.params.put("action", "query");
+		Constants.params.put("list", "categorymembers");
+		Constants.params.put("cmtitle", categoryName);
+		String articlesFromCatQuery = Utils.queryFormulation();
+		JSONObject articlesFromCat = conn.doGETJSON(articlesFromCatQuery);
+		JSONArray array;
+		try {
+			array = articlesFromCat.getJSONObject("query").getJSONArray("categorymembers");
+			for(int i=0; i< array.length(); i++){
+				JSONObject obj = array.getJSONObject(i);
+				articleIDList.add(obj.getInt("pageid"));
+			}
+			return articleIDList;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	
 	}
 
 
