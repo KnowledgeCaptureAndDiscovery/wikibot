@@ -73,9 +73,11 @@ public class WikiStatistics {
                 System.out.println("ARTICLE "+this.articles.size()+" :" +title+"\n");
                 try{
                    JSONArray cat = ((JSONObject)artMetadata).getJSONArray("categories");
-                   pageCategories = new ArrayList<String>();
+                   pageCategories = new ArrayList<>();
                    for (Object aux:cat){
-                       pageCategories.add(((JSONObject)aux).getString("title"));
+                       String aux1 = ((JSONObject)aux).getString("title");
+                       pageCategories.add(aux1);
+                       System.out.println(aux1);
                    }
                 }catch(Exception e){
                     System.out.println("\tNo categories for article "+title);
@@ -286,19 +288,27 @@ public class WikiStatistics {
         int numArticles = this.getArticles().size();
         int numContribs = this.getContributors().size();
         int numWG = this.getArticlesFromCategory(Constants.CATEGORY_WORKING_GROUP).size();
+        int numMV = this.getArticlesFromCategory("Category:MeasuredVariable (L)").size();
+        int numPub = this.getArticlesFromCategory("Category:Publication (L)").size();
+        int numLoc = this.getArticlesFromCategory("Category:Location (L)").size();
         int numCategories = this.getNumCategories().size();
         int numCategoriesNotWG = getNumCategories().stream().filter(a->!a.getCategories().contains(Constants.CATEGORY_WORKING_GROUP)).collect(Collectors.toList()).size();
 //        for(Article a: getArticlesFromCategory(Constants.CATEGORY_WORKING_GROUP)){
 //            System.out.println(a.getName());
 //        }
-        int numPerson = this.getArticlesFromCategory(Constants.CATEGORY_PERSON).size();
-        int numDataset = this.getArticlesFromCategory(Constants.CATEGORY_DATASET).size();
+        int numPerson = this.getArticlesFromCategory("Category:Person (L)").size();
+        int numDataset = this.getArticlesFromCategory("Category:Dataset (L)").size();
         String s = "<h1>Summary of the articles in the wiki: </h1>\n";
         s+="<p>The wiki contains "+numArticles +" articles, edited by "+ numContribs +" contributors.<br/>\n";
         s+="Working group articles: "+numWG+".<br/>\n";
         s+="Person articles: "+numPerson+".<br/>\n";
         s+="Dataset articles: "+numDataset+".<br/>\n";
         s+="Category articles: "+numCategories+".<br/></p>\n";
+        
+        s+="Measured variables: "+numMV+".<br/></p>\n";//ADD HERE ALL THE RELATED TERMS TO ONTOLOGY (if necessary)
+        s+="Publications: "+numPub+".<br/></p>\n";
+        s+="Locations: "+numLoc+".<br/></p>\n";
+        
         s+="<div id=\"distribution\"></div>";
         s+="<script>\n" +
 "	var pie = new d3pie(\"distribution\", {\n" +
@@ -317,8 +327,11 @@ public class WikiStatistics {
 "				{ label: \"Dataset\", value: "+numDataset+" },\n" +
 "				{ label: \"Person\", value: "+numPerson+" },\n" +
 "				{ label: \"Working Group\", value: "+numWG+"},\n" +
-"				{ label: \"Categories\", value: "+numCategories+"},\n" +                
-"				{ label: \"Other\", value: "+(numArticles - numDataset - numPerson - numWG - numCategoriesNotWG)+"}\n" +
+"				{ label: \"Categories\", value: "+numCategories+"},\n" +
+"				{ label: \"Publications\", value: "+numPub+"},\n" +                
+"				{ label: \"Locations\", value: "+numLoc+"},\n" +                 
+"				{ label: \"MeasuredVariables\", value: "+numMV+"},\n" +
+"				{ label: \"Other\", value: "+(numArticles-numMV - numDataset - numPerson - numWG - numCategoriesNotWG - numPub - numLoc)+"}\n" +
 "			]\n" +
 "		}\n" +
 "	});\n" +
