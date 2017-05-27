@@ -8,14 +8,18 @@ import com.mainbot.main.Bot;
 
 public class Utils{
 	
-	public static String queryFormulation(){
+	public static String queryFormulation()
+	{
 		StringBuilder queryString = new StringBuilder();
 		for(String key: Constants.params.keySet()){
 			queryString.append('&').append(key);
 			if(Constants.params.get(key) != "")
+			{
 				queryString.append('=').append(Constants.params.get(key));
+			}
 		}
 		Constants.params.clear();
+		System.out.println("Now printing querystring: " + queryString.toString());
 		return Constants.WIKI_NAME_API_FORMAT + queryString.toString();
 	}
 	

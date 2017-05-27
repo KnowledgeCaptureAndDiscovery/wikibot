@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Histogram - N changes</title>
+<title>Histogram-Past N Days</title>
 <script type="text/javascript" src="js/vis.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.css" rel="stylesheet" type="text/css" />
 </head>
@@ -10,9 +10,9 @@
 <div id="visualization"></div>
 <script type="text/javascript">
 var container = document.getElementById('visualization');
-var items = [{x: '2017-05-03', y: 10},];
+var items = [{x: '2017-05-25', y: 10},];
 var dataset = new vis.DataSet(items);
-var options = {start: '2017-05-03',end: '2017-05-03',style:'bar',barChart: {width:50, align:'center'},drawPoints: false};
+var options = {start: '2017-05-25',end: '2017-05-25',style:'bar',barChart: {width:50, align:'center'},drawPoints: false};
 var graph2d = new vis.Graph2d(container, dataset, options);
 </script>
 </body>

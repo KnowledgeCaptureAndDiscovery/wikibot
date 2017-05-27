@@ -15,7 +15,7 @@ public class Edit {
 	static ConnectionRequests conn = new ConnectionRequests();
 	static Utils util = new Utils();
 	
-	public static int edit(Visualization view , Bot mainbot) throws JSONException, UnsupportedEncodingException{
+	public static int edit(HTMLVisualization view , Bot mainbot) throws JSONException, UnsupportedEncodingException{
 		Constants.params.put("meta", "tokens");
 		Constants.params.put("action", "query");
 		

@@ -28,7 +28,7 @@ public class ConnectionRequests {
 	 * @param query (url encoded)
 	 * @return JSON text
 	 */    
-	public JSONObject doGETJSON(String query){
+	public static JSONObject doGETJSON(String query){
 		try{
 			HttpClient client = HttpClientBuilder.create().build();
 			HttpGet request = new HttpGet(query);
