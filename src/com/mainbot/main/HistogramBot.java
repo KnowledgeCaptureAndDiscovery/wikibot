@@ -12,7 +12,7 @@ import com.mainbot.dataobjects.Revision;
 import com.mainbot.utility.Utils;
 
 /*
- * Bot that create create the histogram past changes.
+ * Bot that create the histogram past changes.
  * */
 
 public class HistogramBot extends Bot{

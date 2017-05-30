@@ -46,7 +46,8 @@ public class RetrieveData {
 	// Extract each dataset from the json object
 	public void processDatasets(JSONObject datasets) throws JSONException {
 		JSONArray dataArray = datasets.getJSONObject("query").getJSONArray("allpages");
-		for (int i = 0; i < dataArray.length(); i++) {
+		for (int i = 0; i < dataArray.length(); i++) 
+		{
 			JSONObject currDataset = dataArray.getJSONObject(i);
 			getLatestEdits(currDataset, 5);
 		}
@@ -120,10 +121,15 @@ public class RetrieveData {
 		Calendar cal = new GregorianCalendar();
 		Date today = new Date();
 		String start = dateFormat.format(today).replace(' ', 'T')+'Z';
+		
+		System.out.println("START DATE:" + start);
+		
 		cal.setTime(today);
 		cal.add(Calendar.DAY_OF_MONTH, -1*numOfDays);
 		Date from = cal.getTime();
 		String end = dateFormat.format(from).replace(' ', 'T')+'Z';
+		
+		System.out.println("END DATE:" + end);
 
 		Constants.params.put("action", "query");
 		Constants.params.put("list", "recentchanges");
@@ -148,6 +154,10 @@ public class RetrieveData {
 			array = latestEdits.getJSONObject("query").getJSONArray("recentchanges");
 			for(int i=0; i< array.length(); i++){
 				JSONObject obj = array.getJSONObject(i);
+				
+				String buf = obj.toString();
+				//System.out.println("Printing buf: " + buf );
+				
 				int pageid = obj.getInt("pageid");
 				if(articleIDList.size() > 0 && !articleIDList.contains(pageid)) continue;
 				int revid = obj.getInt("revid");

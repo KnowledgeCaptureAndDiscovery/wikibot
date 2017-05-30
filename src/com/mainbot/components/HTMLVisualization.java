@@ -69,7 +69,7 @@ public class HTMLVisualization {
 		
 		String filename = "changes-pastnchanges.html";
 		
-		BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/Users/jieji/Desktop/ResearchBackup/visualizations/"+filename)));		
+		BufferedWriter writer= new BufferedWriter(new FileWriter(new File("\\Users\\mtoley\\Desktop\\ResearchBackup\\wikibot\\visualizations\\"+filename)));		
 		writer.write(htmlResult);
 		writer.close();
 		/////////////////////////////////////////////////////////////////
@@ -130,7 +130,7 @@ public class HTMLVisualization {
 
 		String filename = "changes-pastndays.html";
 		//BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/home/neha/git/wikibot/visualizations/"+filename)));
-		BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/Users/jieji/Desktop/ResearchBackup/visualizations/"+filename)));		
+		BufferedWriter writer= new BufferedWriter(new FileWriter(new File("\\Users\\mtoley\\Desktop\\ResearchBackup\\wikibot\\visualizations\\"+filename)));		
 		writer.write(htmlResult);
 		writer.close();
 
@@ -180,7 +180,7 @@ public class HTMLVisualization {
 		
 		
 		String filename = "newsletter.html";
-		BufferedWriter writer= new BufferedWriter(new FileWriter(new File("/Users/jieji/Desktop/ResearchBackup/visualizations/"+filename)));		
+		BufferedWriter writer= new BufferedWriter(new FileWriter(new File("\\Users\\mtoley\\Desktop\\ResearchBackup\\wikibot\\visualizations\\"+filename)));		
 		writer.write(htmlResult);
 		writer.close();
 
