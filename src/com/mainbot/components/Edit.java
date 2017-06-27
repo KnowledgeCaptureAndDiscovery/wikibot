@@ -32,17 +32,47 @@ public class Edit {
 		Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
 		Constants.params.put("contentformat", "text/x-wiki");
 		Constants.params.put("section", "new");
-		Constants.params.put("title", "Test");
+		Constants.params.put("title", "Weekly_Summary");
 		
 		String editQuery = Utils.queryFormulation();
 		//String editQuery = WIKI_NAME+ "api.php?action=edit&title=Test&section=new&sectiontitle=EditAPITest&text="+edittext+"&format=json";
 		JSONObject edit = conn.postFuncWithParams(editQuery, mainbot.getSessionID(), token);
-		System.out.println(edit);
+		//System.out.println(edit);
 		return edit.getJSONObject("edit").getInt("newrevid");
 	}
 	
 	
-	public void undoRevisions(int revid, boolean undoafter, Bot mainbot) throws JSONException{
+	public void undoRevisions(int revid, boolean undoafter, Bot mainbot) throws JSONException
+	{
+		Constants.params.put("action", "query");
+		Constants.params.put("meta", "tokens");
+		String tokenQuery = util.queryFormulation();
+		JSONObject getToken = conn.doPOSTJSON(tokenQuery, mainbot.getSessionID());
+		String token = getToken.getJSONObject("query").getJSONObject("tokens").get("csrftoken").toString();
+		//System.out.println(token);
+		
+		Constants.params.put("action", "edit");
+		Constants.params.put("title", "Weekly_Summary");
+		
+		
+		if(undoafter)
+		{
+			//System.out.println("NOW UNDOAFTERING!!");
+			Constants.params.put("undoafter", String.valueOf(revid));
+			Constants.params.put("text", "Testing");			
+		}
+		else
+		{
+			//System.out.println("NOW UNDOING!!");
+			Constants.params.put("undo", String.valueOf(revid));
+		}
+		String undoQuery = util.queryFormulation();
+		JSONObject undo = conn.postFuncWithParams(undoQuery, mainbot.getSessionID(), token);
+		System.out.println(undo);
+	}
+	
+	public void undoRevisionsDuringTwoRevid(int revidStart, int revidEnd, Bot mainbot) throws JSONException
+	{
 		Constants.params.put("action", "query");
 		Constants.params.put("meta", "tokens");
 		String tokenQuery = util.queryFormulation();
@@ -53,13 +83,12 @@ public class Edit {
 		Constants.params.put("action", "edit");
 		Constants.params.put("title", "Test");
 		
+	
+		Constants.params.put("undo", String.valueOf(revidEnd));
+		Constants.params.put("undoafter", String.valueOf(revidStart));
+		//Constants.params.put("text", "Testing");			
+				
 		
-		if(undoafter){
-			Constants.params.put("undoafter", String.valueOf(revid));
-			Constants.params.put("text", "Testing");			
-		}else{
-			Constants.params.put("undo", String.valueOf(revid));
-		}
 		String undoQuery = util.queryFormulation();
 		JSONObject undo = conn.postFuncWithParams(undoQuery, mainbot.getSessionID(), token);
 		System.out.println(undo);

@@ -19,7 +19,7 @@ public class Utils{
 			}
 		}
 		Constants.params.clear();
-		System.out.println("Now printing querystring: " + queryString.toString());
+		//System.out.println("Now printing querystring: " + queryString.toString());
 		return Constants.WIKI_NAME_API_FORMAT + queryString.toString();
 	}
 	

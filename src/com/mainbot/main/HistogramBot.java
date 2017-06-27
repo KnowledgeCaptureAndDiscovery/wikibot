@@ -2,6 +2,7 @@ package com.mainbot.main;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import org.json.JSONException;
 
@@ -59,29 +60,31 @@ public class HistogramBot extends Bot{
 		int revid = edit.edit(view,mainbot); //edit the wiki
 		
 		
-		/*Scanner scanner = new Scanner(System.in);
-		String erase = scanner.next();
-		if(!erase.isEmpty())
-			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
-*/
+//		Scanner scanner = new Scanner(System.in);
+//		String erase = scanner.next();
+//		if(!erase.isEmpty())
+//		{
+//			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
+//		}
+
 		revisionList.clear();
-		revisionList = RetrieveData.getChangesPastNDays(30, "Category:Working_Group"); //get the revision list for past 30 days
+		revisionList = RetrieveData.getChangesPastNDays(10, "Category:Working_Group"); //get the revision list for past 30 days
 		view2.changesPastNDaysView(revisionList,15);
 		
 		//5.23 Update: Newsletter/////////////
-		view3.newsletter(revisionList, 15);
+		//view3.firstnewsletter(revisionList, 15);
 		System.out.println("VIEW3 CREATED!!");
 		///////////////////////////////////////
 		
-		int revid2 = edit.edit(view2,mainbot); //edit the wiki
+		//int revid2 = edit.edit(view2,mainbot); //edit the wiki
+		
+		int revid3 = edit.edit(view3, mainbot);
 		
 		
 /*		erase = scanner.next();
 		if(!erase.isEmpty())
 			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
 */
-		
-		
 	}
 	
 	public static void main(String[] args) throws JSONException, IOException 
@@ -92,8 +95,5 @@ public class HistogramBot extends Bot{
 		Utils util = new Utils();
 		util.login(mainbot);
 		createHistogram(mainbot);
-		
-		
 	}
-
 }

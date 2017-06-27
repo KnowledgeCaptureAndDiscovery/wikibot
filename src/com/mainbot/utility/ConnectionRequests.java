@@ -113,7 +113,7 @@ public class ConnectionRequests {
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.err.println("Error while getting POST object with token as param:" +query +e.getMessage());
+			System.err.println("Error while getting POST object with token as param:" + query + e.getMessage());
 			return null;
 		}
 

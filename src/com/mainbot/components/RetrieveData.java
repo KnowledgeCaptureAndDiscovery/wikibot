@@ -122,14 +122,14 @@ public class RetrieveData {
 		Date today = new Date();
 		String start = dateFormat.format(today).replace(' ', 'T')+'Z';
 		
-		System.out.println("START DATE:" + start);
+		//System.out.println("START DATE:" + start);
 		
 		cal.setTime(today);
 		cal.add(Calendar.DAY_OF_MONTH, -1*numOfDays);
 		Date from = cal.getTime();
 		String end = dateFormat.format(from).replace(' ', 'T')+'Z';
 		
-		System.out.println("END DATE:" + end);
+		//System.out.println("END DATE:" + end);
 
 		Constants.params.put("action", "query");
 		Constants.params.put("list", "recentchanges");
@@ -140,9 +140,9 @@ public class RetrieveData {
 
 
 		String listChangesQuery = Utils.queryFormulation();
-		System.out.println("FORMULATING QUERY!!!");
+		//System.out.println("FORMULATING QUERY!!!");
 		System.out.println(listChangesQuery);
-		System.out.println("LIST CHANGES QUERY!!!");
+		//System.out.println("LIST CHANGES QUERY!!!");
 		JSONArray array;
 		JSONObject latestEdits = conn.doGETJSON(listChangesQuery);
 		ArrayList<Integer> articleIDList = new ArrayList<>(); 
