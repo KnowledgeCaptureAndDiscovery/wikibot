@@ -9,12 +9,15 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.mainbot.utility.ConnectionRequests;
+import com.sun.javafx.collections.MappingChange.Map;
 
 public class CategoryDefinition {
     public static final String queryCategories = "http://wiki.linked.earth/wiki/api.php?action=query&cmtype=subcat&list=categorymembers&cmlimit=100&format=json&cmtitle=";
@@ -363,6 +366,10 @@ public class CategoryDefinition {
         		continue;//skipping those names with white space
         				//media wiki can't read a username with white space, so here is a compromise
         	}
+        	else if(temp.equals("TestBot"))
+        	{
+        		continue;//need to filter testbot
+        	}
         	else
         	{
             	int store = userContrib(temp);
@@ -446,11 +453,7 @@ public class CategoryDefinition {
     }
     
     public static int checkIfOneWorkingGroupIsUpdated(String s, int pageid) throws UnsupportedEncodingException, JSONException, ParseException
-    {
-
-    	
-    	//System.out.println(art.getJSONObject("query").getJSONObject("pages").getJSONObject(Integer.toString(pageid)).getJSONArray("revisions").getJSONObject(0).getString("timestamp"));
-    	    	    	    	
+    {    	    	    	    	    	
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     	//get start/end date//////////////////////////////
@@ -467,14 +470,11 @@ public class CategoryDefinition {
 		
 		//System.out.println("END DATE:" + end);
 		//////////////////////////////////////////////////
-		
-		
-    	
+				    	
     	String url = "http://wiki.linked.earth/wiki/api.php?action=query&prop=revisions"
     			+ "&titles=" + s + "&rvprop=" + URLEncoder.encode("timestamp|user", "UTF-8") + "&rvlimit=50&rvstart=" + start + "&rvend=" + end + "&format=json";
     	
     	JSONObject art = ConnectionRequests.doGETJSON(url);
-    	//System.out.println(art);
     					        
         //get the timestamp of the last revision of a certain working group
         //and parse this timestamp into Date format, so that we can check if this timestamp is within last seven days
@@ -494,37 +494,60 @@ public class CategoryDefinition {
     	{
     		totalRevisions = 0;
     	}
-    	
-    	
-    	//System.out.println(totalRevisions);
-    	
+    	   	
 		return totalRevisions;	
     }
     
-    public static int getLastRevisionId() throws JSONException, UnsupportedEncodingException
+    public static int getLastRevisionId(String whichPage) throws JSONException, UnsupportedEncodingException
     {    	
-    	String url = "http://wiki.linked.earth/wiki/api.php?action=query&prop=revisions&titles=Weekly_Summary&rvprop=" + URLEncoder.encode("ids|timestamp", "UTF-8") + "&format=json";
+    	String url = "http://wiki.linked.earth/wiki/api.php?action=query&prop=revisions&titles=" + whichPage 
+    			+ "&rvprop=" + URLEncoder.encode("ids|timestamp", "UTF-8") + "&format=json";
     	JSONObject art = ConnectionRequests.doGETJSON(url);
 
-    	//System.out.println(art);
-
-    	int revid =  art.getJSONObject("query").getJSONObject("pages").getJSONObject(Integer.toString(33579)).getJSONArray("revisions").getJSONObject(0).getInt("revid");
+    	int revid = 0;
     	
-    	//System.out.println(revid);
+    	int pageid = getPageId(whichPage);
+    	
+        revid =  art.getJSONObject("query").getJSONObject("pages").getJSONObject(Integer.toString(pageid)).
+        		getJSONArray("revisions").getJSONObject(0).getInt("revid");
+
 		return revid;
     }
     
-//main for testing    
-    public static void main(String[] args)
+    public static int getPageId(String whichPage) throws JSONException
     {
-        try{
+    	String url = "http://wiki.linked.earth/wiki/api.php?action=query&prop=pageprops&titles=" + whichPage + "&format=json";
+    	JSONObject art = ConnectionRequests.doGETJSON(url);
+
+    	System.out.println(art);
+    	
+    	System.out.println(art.getJSONObject("query").getJSONObject("pages")   );
+    	JSONObject pages = art.getJSONObject("query").getJSONObject("pages");
+    	//pages are in this format:
+    	//{"33579":{"ns":0,"pageid":33579,"title":"Weekly Summary","pageprops":{"smw-semanticdata-status":"1"}}}
+    	//33579 is the pageid of queried page, so the iterator just need to return the first thing it gets
+    	
+    	Iterator allKeys = pages.keys();
+    	
+    	String key = (String) allKeys.next();//get the first key
+    	
+		return Integer.parseInt(key);
+    }
+    
+    
+//main for testing    
+//    public static void main(String[] args)
+//    {
+//        try{
+///        	getPageId("Weekly_Summary");
 //        	checkIfOneWorkingGroupIsUpdated("Category:Floods_Working_Group", 32121);
 //        	checkIfOneWorkingGroupIsUpdated("Category:Chronologies_Working_Group", 4050);
 //        	getLastRevisionId();
 //
-//        	int buf = userContrib("AbiStone");
+//        	int buf = userContrib("TestBot");
 //        	System.out.println("# CONTRIBS: " + buf);
-//        	
+//
+//        	System.out.println(getMostActiveUserAndHisContribs());
 //        	getMostActiveUserAndHisContribs();
 //        	
 //        	getAllUsers();
@@ -553,8 +576,8 @@ public class CategoryDefinition {
 //            System.out.println("Working Group: "+countArticlesOfCategory("Category:Working_Group"));
 //            System.out.println("Working Group: "+countArticlesOfCategoryNDays("Category:Working_Group", 10));
 //            
-        }catch(Exception e){
-            System.out.println("Error "+e.getMessage()); 
-        }
-    }
+//        }catch(Exception e){
+//            System.out.println("Error "+e.getMessage()); 
+//        }
+//    }
 }

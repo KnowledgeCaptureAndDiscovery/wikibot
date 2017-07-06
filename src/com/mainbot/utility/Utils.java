@@ -23,14 +23,14 @@ public class Utils{
 		return Constants.WIKI_NAME_API_FORMAT + queryString.toString();
 	}
 	
-	public static void login(Bot mainbot) throws JSONException{
+	public static boolean login(Bot mainbot) throws JSONException{
 		
 		Constants.params.put("action", "login");
 		Constants.params.put("lgname", mainbot.getUsername());
 		
 		String tokenQuery = queryFormulation();
 		JSONObject getToken = ConnectionRequests.doPOSTJSON(tokenQuery, "");
-		System.out.println(getToken);
+		//System.out.println("This is getToken: " + getToken);
 		
 		String token = getToken.getJSONObject("login").get("token").toString();
 		String sessionid = getToken.getJSONObject("login").get("sessionid").toString();
@@ -45,19 +45,40 @@ public class Utils{
 		
 		String loginQuery = queryFormulation();
 		JSONObject login = ConnectionRequests.doPOSTJSON(loginQuery, mainbot.getSessionID());
-		System.out.println(login);
-
+		//System.out.println("This is login: " + login);
+		
+		
 		/* Assertion to check if the login is successful */
 		checkLogin(mainbot, "user");
 		checkLogin(mainbot, "bot");
+		
+		//check login successful or not
+		if(login.getJSONObject("login").getString("result").equals("Success"))
+		{
+			System.out.println("LOGIN SUCCEEDED");
+			return true;
+		}
+		else
+		{
+			System.out.println("LOGIN FAILED");
+			return false;
+		}
+
+
 	}
 	
-	public static void checkLogin(Bot mainbot, String userType){
+	public static void checkLogin(Bot mainbot, String userType) throws JSONException{
 		Constants.params.put("action", "query");
 		Constants.params.put("assert", userType);
 		String user = queryFormulation();
 		
-		System.out.println(ConnectionRequests.doPOSTJSON(user, mainbot.getSessionID()).toString());		
+		//System.out.println(ConnectionRequests.doPOSTJSON(user, mainbot.getSessionID()));		
+		
+		JSONObject post = ConnectionRequests.doPOSTJSON(user, mainbot.getSessionID());
+		
+		//System.out.println("This is checkLogin, a postJSON: " + post);
+		
+		
 	}
 	
 	public static boolean hasNext(JSONObject o){
@@ -68,4 +89,6 @@ public class Utils{
             return false;
         }
     }
+	
+
 }

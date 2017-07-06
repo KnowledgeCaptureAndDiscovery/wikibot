@@ -32,24 +32,28 @@ public class WikiStatistics {
         contributors = new HashMap<>();
         
         //parsing the whole Wiki
-        try{
-        //while there are remaining articles, process them.
-        JSONObject art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE);
-        while(hasNext(art)){
-            processArticles(art);
-            //prepare next batch
-            String cont = URLEncoder.encode(art.getJSONObject("query-continue").getJSONObject("allpages").getString("apcontinue"), "UTF-8");
-            art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE+"&apcontinue="+cont);
+        try
+        {
+        	//while there are remaining articles, process them.
+        	JSONObject art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE);
+        	while(hasNext(art))
+        	{
+        		processArticles(art);
+        		//prepare next batch
+        		String cont = URLEncoder.encode(art.getJSONObject("query-continue").getJSONObject("allpages").getString("apcontinue"), "UTF-8");
+        		art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE+"&apcontinue="+cont);
+        	}
+        	//the last batch (no "next")
+        	processArticles(art);
+        	//process categories (for some reason they are not listed among the pages)
+        	//there are less than 200 categories.
+        	art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_CATEGORIES);
+        	processArticles(art);
+        	System.out.println("Number of articles:"+articles.size());
+        	System.out.println("Number of contributors:"+contributors.size());
         }
-        //the last batch (no "next")
-        processArticles(art);
-        //process categories (for some reason they are not listed among the pages)
-        //there are less than 200 categories.
-        art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_CATEGORIES);
-        processArticles(art);
-        System.out.println("Number of articles:"+articles.size());
-        System.out.println("Number of contributors:"+contributors.size());
-        }catch(Exception e){
+        catch(Exception e)
+        {
             System.err.println("Error: "+e.getMessage());
         }
     }
@@ -59,6 +63,7 @@ public class WikiStatistics {
             //process articles. This can be optimized by retrieving qeuries of 50 max instead of 1
             JSONArray pages = art.getJSONObject("query").getJSONArray("allpages");
             
+            System.out.println("pages length is + " + pages.length());
             //5.24 UPDATE: Error: Can only iterate over an array or an instance of java.lang.Iterable
             //So have to use classical way to go through JSONArray
             //for(Object currPage:pages)
@@ -83,18 +88,27 @@ public class WikiStatistics {
                 artMetadata = artMetadata.getJSONObject("query").getJSONObject("pages").getJSONObject(""+articleID);
                 System.out.println("ARTICLE "+this.articles.size()+" :" +title+"\n");
                 try{
-                   JSONArray cat = ((JSONObject)artMetadata).getJSONArray("categories");
-                   pageCategories = new ArrayList<>();
-                   //for (Object aux:cat){
-                   for(int k = 0; k < cat.length(); i++)
-                   {
-                	   JSONObject aux = (JSONObject) cat.get(k);
-                       //String aux1 = ((JSONObject)aux).getString("title");
-                	   String aux1 = aux.getString("title");
-                       pageCategories.add(aux1);
-                       System.out.println(aux1);
-                   }
-                }catch(Exception e){
+                	JSONArray cat = ((JSONObject)artMetadata).getJSONArray("categories");
+                   
+                	System.out.println("adasa" + cat + " length is " + cat.length());
+                   
+                	pageCategories = new ArrayList<>();
+                	for(int k = 0; k < cat.length(); i++)
+                	{
+                    	System.out.println("adasa" + cat + " length is " + cat.length());
+
+                		JSONObject aux = (JSONObject) cat.get(k);
+                	   
+                		System.out.println("qqqqqqqq" + aux);
+                	   
+                		//String aux1 = ((JSONObject)aux).getString("title");
+                		String aux1 = aux.getString("title");
+                		pageCategories.add(aux1);
+                		System.out.println("dsadadasadasdasdas" + aux1);
+                	}
+                }
+                catch(Exception e)
+                {
                     System.out.println("\tNo categories for article "+title);
                 }
                 try{
@@ -358,6 +372,8 @@ public class WikiStatistics {
 "		}\n" +
 "	});\n" +
 "</script>";
+        
+        System.out.println(s);
         return s;
     }
     
@@ -461,9 +477,9 @@ public class WikiStatistics {
         //tests
         System.out.println(s.getWikiArticleDistributionSummary());
         
-        System.out.println(s.getWikiContributionSummary());
+        //System.out.println(s.getWikiContributionSummary());
         
-        System.out.println(s.getWikiCollaborationSummary());
+        //System.out.println(s.getWikiCollaborationSummary());
         
 //        do the json serialization and produce the stats.
         

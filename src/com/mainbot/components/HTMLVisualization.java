@@ -201,73 +201,81 @@ public class HTMLVisualization {
 		result += "<br/>";
 		
 		
-		result += "<strong> Here are the updated working groups: </strong><br/>";
 		
 		ArrayList<String> updatedwg = revisedWorkingGroupLinks;
 		ArrayList<String> updatedwgRaw = revisedWorkingGroupLinksRaw;
 		ArrayList<Integer> updatedwgNum = revisedWorkingGroupLinksNum;
+		
 //WORKING GROUP NEW PAGE LINKS////////////////////////////////////////
-		result += "<div>";
-		if(updatedwg.size() > 5)//make the page less messy
+		if(updatedwg.size() != 0 )
 		{
-			for(int i = 0; i < 5; i++)
-			{	
-				//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-		
-				result += "<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
-							+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
+			result += "<strong> Here are the updated working groups: </strong><br/>";
+			result += "<div>";
+			if(updatedwg.size() > 5)//make the page less messy
+			{
+				for(int i = 0; i < 5; i++)
+				{	
+					//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
+			
+					result += "<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
+								+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
+				}
+				result += "<strong>[[#more-wg-links|More updated working group links are at the bottom.]]</strong>";
 			}
-			result += "<strong>[[#more-wg-links|More updated working group links are at the bottom.]]</strong>";
-		}
-		else
-		{
-			for(int i = 0; i < updatedwg.size(); i++)
-			{	
-				//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-		
-				result += "<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
-							+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
+			else
+			{
+				for(int i = 0; i < updatedwg.size(); i++)
+				{	
+					//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
+			
+					result += "<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
+								+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
+				}
 			}
+				
+			result += "</div>";
+			result += "<br/>";
 		}
 		
-		
-		
-		result += "</div>";
-		result += "<br/>";
 ////////////////////////////////////////////////////////
 		
 		
 		
-		result += "<strong> Here are newly added datasets: </strong><br/>";
 		
 		ArrayList<String> buf = datasetLinks;
 		ArrayList<String> rawbuf = datasetLinksRaw;
 
 //DATASET LINKS////////////////////////////////////////
-		result += "<div>";
-		if(buf.size() > 5)//make the page less messy
+		if(datasetLinks.size() != 0)
 		{
-			for(int i = 0; i < 5; i++)
-			{	
-				//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-		
-				result += "<span class='plainlinks'>" + "[" + buf.get(i) + " " + rawbuf.get(i) + "]" + "</span>" + "<br/>";
+			result += "<strong> Here are newly added datasets: </strong><br/>";
+			result += "<div>";
+			if(buf.size() > 5)//make the page less messy
+			{
+				for(int i = 0; i < 5; i++)
+				{	
+					//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
+			
+					result += "<span class='plainlinks'>" + "[" + buf.get(i) + " " + rawbuf.get(i) + "]" + "</span>" + "<br/>";
+				}
+				result += "<strong>[[#more-dataset-links|More updated working group links are at the bottom.]]</strong>";
 			}
-			result += "<strong>[[#more-dataset-links|More updated working group links are at the bottom.]]</strong>";
-		}
-		else
-		{
-			for(int i = 0; i < buf.size(); i++)
-			{	
-				//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-		
-				result += "<span class='plainlinks'>" + "[" + buf.get(i) + " " + rawbuf.get(i) + "]" + "</span>" + "<br/>";
+			else
+			{
+				for(int i = 0; i < buf.size(); i++)
+				{	
+					//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
+			
+					result += "<span class='plainlinks'>" + "[" + buf.get(i) + " " + rawbuf.get(i) + "]" + "</span>" + "<br/>";
+				}
 			}
+			
+			
+			result += "</div>";
+			result += "<br/>";
+
 		}
 		
-		
-		result += "</div>";
-		result += "<br/>";
 ////////////////////////////////////////////////////////		
 		
 //NEW PUBLICATION LINKS(NOT NEEDED ANYMORE)		
@@ -299,31 +307,40 @@ public class HTMLVisualization {
 		
 		
 //NEW OTHER MODIFIED PAGES/////////////////////////////////////////////	
-		result += "<strong>Here are other modified pages: </strong><br/>";
-		result += "<div>";
+		
+		
+
 		ArrayList<String> temp = otherLinks;
 		ArrayList<String> rawtemp = otherLinksRaw;
-
-		if(temp.size() > 5)
-		{
-			for(int i = 0; i < 5; i++)
-			{
-				result += "<span class='plainlinks'>" + "[" + temp.get(i) + " " + rawtemp.get(i) + "]" + "</span>" + "<br/>";
-			}
-			result += "<strong>[[#more-other-links|More other links are at the bottom.]]</strong>";
-
-		}
-		else
-		{
-			for(int i = 0; i < temp.size(); i++)
-			{
-				result += "<span class='plainlinks'>" + "[" + temp.get(i) + " " + rawtemp.get(i) + "]" + "</span>" + "<br/>";
-			}
-		}
-
-		result += "</div>";
 		
-		result += "<br/>";
+		if(otherLinks.size() != 0)
+		{
+			result += "<strong>Here are other modified pages: </strong><br/>";
+			result += "<div>";
+			if(temp.size() > 5)
+			{
+				for(int i = 0; i < 5; i++)
+				{
+					result += "<span class='plainlinks'>" + "[" + temp.get(i) + " " + rawtemp.get(i) + "]" + "</span>" + "<br/>";
+				}
+				result += "<strong>[[#more-other-links|More modified links are at the bottom.]]</strong>";
+
+			}
+			else
+			{
+				for(int i = 0; i < temp.size(); i++)
+				{
+					result += "<span class='plainlinks'>" + "[" + temp.get(i) + " " + rawtemp.get(i) + "]" + "</span>" + "<br/>";
+				}
+			}
+
+			result += "</div>";
+			result += "<br/>";
+		}
+		
+
+		
+
 //////////////////////////////////////////////////////////////////
 		result += "<br/>";
 		result += "<br/>";
@@ -373,7 +390,7 @@ public class HTMLVisualization {
 		
 		if(temp.size() > 5)//other other links
 		{
-			result += "<strong id='more-other-links'>More other links: </strong><br/>";
+			result += "<strong id='more-other-links'>More modified links: </strong><br/>";
 			for(int i = 5; i < temp.size(); i++)
 			{
 				result += "<span class='plainlinks'>" + "[" + temp.get(i) + " " + rawtemp.get(i) + "]" + "</span>" + "<br/>";
@@ -388,7 +405,7 @@ public class HTMLVisualization {
 		this.viewText = result;
 		
 		
-		DateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+		DateFormat dateFormat = new SimpleDateFormat("yyyy.MMM.dd HH.mmaaa");
 		Calendar cal = new GregorianCalendar();
 		Date today = new Date();
 		String start = dateFormat.format(today);
@@ -398,9 +415,9 @@ public class HTMLVisualization {
 		Date from = cal.getTime();
 		String end = dateFormat.format(from);
 		
-		this.section = "Newsletter from " + end + " to " + start ;
+		this.section = "Newsletter from <strong>" + end + "</strong> to <strong>" + start + "</strong>";
 
-		System.out.println("newsletter created!!");
+		System.out.println("Newsletter created!!");
 		
 	}
 	////////////////////////////////////////////////////////
