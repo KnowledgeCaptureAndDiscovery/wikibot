@@ -17,6 +17,5 @@
 	<classpathentry kind="lib" path="/home/neha/Downloads/httpcomponents-client-4.5.3/lib/httpmime-4.5.3.jar"/>
 	<classpathentry kind="lib" path="/home/neha/Downloads/httpcomponents-client-4.5.3/lib/jna-4.1.0.jar"/>
 	<classpathentry kind="lib" path="/home/neha/Downloads/httpcomponents-client-4.5.3/lib/jna-platform-4.1.0.jar"/>
-	<classpathentry kind="lib" path="/home/neha/Downloads/guava-15.0-rc1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
