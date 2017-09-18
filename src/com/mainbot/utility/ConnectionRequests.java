@@ -28,7 +28,7 @@ public class ConnectionRequests {
 	 * @param query (url encoded)
 	 * @return JSON text
 	 */    
-	public JSONObject doGETJSON(String query){
+	public static JSONObject doGETJSON(String query){
 		try{
 			HttpClient client = HttpClientBuilder.create().build();
 			HttpGet request = new HttpGet(query);
@@ -113,7 +113,7 @@ public class ConnectionRequests {
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.err.println("Error while getting POST object with token as param:" +query +e.getMessage());
+			System.err.println("Error while getting POST object with token as param:" + query + e.getMessage());
 			return null;
 		}
 

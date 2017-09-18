@@ -6,12 +6,16 @@ import java.util.Scanner;
 
 import org.json.JSONException;
 
-import com.mainbot.components.Access;
+import com.mainbot.components.RetrieveData;
 import com.mainbot.components.Edit;
-import com.mainbot.components.Visualization;
+import com.mainbot.components.HTMLVisualization;
 import com.mainbot.dataobjects.Revision;
 import com.mainbot.utility.Utils;
 
+
+/*
+ * Parent for all the specialized bots.
+ * */
 public class Bot {
 	/**
 	 * @param args
@@ -53,40 +57,7 @@ public class Bot {
 		this.password = password;
 	}
 	
-	public static void createHistogram(Bot mainbot) throws JSONException, IOException{
-		ArrayList<Revision> revisionList;
-		Edit edit = new Edit();
-		Visualization view = new Visualization();
-		Visualization view2 = new Visualization();
-		revisionList = Access.getRecentChanges(10); //get the last 10 changes
-		view.recentChangeView(revisionList);
-		int revid = edit.edit(view,mainbot); //edit the wiki
-		
-		
-		/*Scanner scanner = new Scanner(System.in);
-		String erase = scanner.next();
-		if(!erase.isEmpty())
-			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
-*/
-		revisionList.clear();
-		revisionList = Access.getChangesPastNDays(30, "Category:Working_Group"); //get the revision list for past 30 days
-		view2.changesPastNDaysView(revisionList,30);
-		int revid2 = edit.edit(view2,mainbot); //edit the wiki
-		
-		
-/*		erase = scanner.next();
-		if(!erase.isEmpty())
-			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
-*/
-	}
 	
-	public static void main(String[] args) throws JSONException, IOException {
-		// TODO Auto-generated method stub
-		Bot mainbot = new Bot("testBot", "testBot123");
-		Utils util = new Utils();
-		util.login(mainbot);
-		createHistogram(mainbot);
-		
-	}
+
 
 }

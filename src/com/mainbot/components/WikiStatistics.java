@@ -1,8 +1,9 @@
 //add proper license here!!
-package com.wikibot.entity;
+package com.mainbot.components;
 
-import com.wikibot.app.Constants;
-import com.wikibot.app.Utils;
+import com.mainbot.dataobjects.Agent;
+import com.mainbot.dataobjects.Article;
+import com.mainbot.utility.*;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import com.mainbot.utility.*;
 
 /**
  * Class that retrieves a series of articles and their metadata.
@@ -30,37 +32,51 @@ public class WikiStatistics {
         contributors = new HashMap<>();
         
         //parsing the whole Wiki
-        try{
-        //while there are remaining articles, process them.
-        JSONObject art = Utils.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE);
-        while(hasNext(art)){
-            processArticles(art);
-            //prepare next batch
-            String cont = URLEncoder.encode(art.getJSONObject("query-continue").getJSONObject("allpages").getString("apcontinue"), "UTF-8");
-            art = Utils.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE+"&apcontinue="+cont);
+        try
+        {
+        	//while there are remaining articles, process them.
+        	JSONObject art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE);
+        	while(hasNext(art))
+        	{
+        		processArticles(art);
+        		//prepare next batch
+        		String cont = URLEncoder.encode(art.getJSONObject("query-continue").getJSONObject("allpages").getString("apcontinue"), "UTF-8");
+        		art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_PAGES_AND_CONTINUE+"&apcontinue="+cont);
+        	}
+        	//the last batch (no "next")
+        	processArticles(art);
+        	//process categories (for some reason they are not listed among the pages)
+        	//there are less than 200 categories.
+        	art = ConnectionRequests.doGETJSON(Constants.QUERY_GET_ALL_CATEGORIES);
+        	processArticles(art);
+        	System.out.println("Number of articles:"+articles.size());
+        	System.out.println("Number of contributors:"+contributors.size());
         }
-        //the last batch (no "next")
-        processArticles(art);
-        //process categories (for some reason they are not listed among the pages)
-        //there are less than 200 categories.
-        art = Utils.doGETJSON(Constants.QUERY_GET_ALL_CATEGORIES);
-        processArticles(art);
-        System.out.println("Number of articles:"+articles.size());
-        System.out.println("Number of contributors:"+contributors.size());
-        }catch(Exception e){
+        catch(Exception e)
+        {
             System.err.println("Error: "+e.getMessage());
         }
     }
    
-    private void processArticles(JSONObject art){
+    private void processArticles(JSONObject art) throws JSONException{
         
             //process articles. This can be optimized by retrieving qeuries of 50 max instead of 1
             JSONArray pages = art.getJSONObject("query").getJSONArray("allpages");
-            for(Object currPage:pages){
+            
+            System.out.println("pages length is + " + pages.length());
+            //5.24 UPDATE: Error: Can only iterate over an array or an instance of java.lang.Iterable
+            //So have to use classical way to go through JSONArray
+            //for(Object currPage:pages)
+            for(int i = 0; i < pages.length(); i++)
+            {
                 //OPTIMIZATION: DO 20 BY 20, IT SHOULD BE WAY FASTER
+            	
+            	JSONObject currPage = (JSONObject) pages.get(i);//5.24 Update: have to be old school
                 
-                int articleID = ((JSONObject)currPage).getInt("pageid");
-                String title = ((JSONObject)currPage).getString("title");
+                //int articleID = ((JSONObject)currPage).getInt("pageid");
+            	int articleID = currPage.getInt("pageid");
+                //String title = ((JSONObject)currPage).getString("title");
+                String title = currPage.getString("title");
                 Article a = new Article();
                 a.setName(title);
                 a.setPageID(articleID);
@@ -68,24 +84,43 @@ public class WikiStatistics {
                 ArrayList<String> pageCategories = null;
                 ArrayList<Agent> pageContributors = null;
                 //get article metadata. This could be optimized by getting 50 at a time.
-                JSONObject artMetadata = Utils.doGETJSON(Constants.WIKI_NAME+Constants.FORMAT_AND_API+"&prop=categories%7Ccontributors&pageids="+articleID);
+                JSONObject artMetadata = ConnectionRequests.doGETJSON(Constants.WIKI_NAME+Constants.FORMAT_AND_API+"&prop=categories%7Ccontributors&pageids="+articleID);
                 artMetadata = artMetadata.getJSONObject("query").getJSONObject("pages").getJSONObject(""+articleID);
                 System.out.println("ARTICLE "+this.articles.size()+" :" +title+"\n");
                 try{
-                   JSONArray cat = ((JSONObject)artMetadata).getJSONArray("categories");
-                   pageCategories = new ArrayList<String>();
-                   for (Object aux:cat){
-                       pageCategories.add(((JSONObject)aux).getString("title"));
-                   }
-                }catch(Exception e){
+                	JSONArray cat = ((JSONObject)artMetadata).getJSONArray("categories");
+                   
+                	System.out.println("adasa" + cat + " length is " + cat.length());
+                   
+                	pageCategories = new ArrayList<>();
+                	for(int k = 0; k < cat.length(); i++)
+                	{
+                    	System.out.println("adasa" + cat + " length is " + cat.length());
+
+                		JSONObject aux = (JSONObject) cat.get(k);
+                	   
+                		System.out.println("qqqqqqqq" + aux);
+                	   
+                		//String aux1 = ((JSONObject)aux).getString("title");
+                		String aux1 = aux.getString("title");
+                		pageCategories.add(aux1);
+                		System.out.println("dsadadasadasdasdas" + aux1);
+                	}
+                }
+                catch(Exception e)
+                {
                     System.out.println("\tNo categories for article "+title);
                 }
                 try{
                     JSONArray contr = ((JSONObject)artMetadata).getJSONArray("contributors");
                     pageContributors = new ArrayList<Agent>();
-                    for (Object aux:contr){
-                       String contribName = ((JSONObject)aux).getString("name");
-                       int contribId = ((JSONObject)aux).getInt("userid");
+                    //for (Object aux:contr){
+                    for(int j = 0; j < contr.length(); i++)
+                    {
+                       JSONObject aux = (JSONObject) contr.get(i);
+                       //String contribName = ((JSONObject)aux).getString("name");
+                       String contribName = aux.getString("name");
+                       int contribId = aux.getInt("userid");
                        //if it is already part of the contributors, reuse it. Otherwise, create it.
                        Agent currentContrib;
                        if(contributors.containsKey(contribId)){
@@ -265,16 +300,19 @@ public class WikiStatistics {
      * @return 
      */
     public static String printAuthorContributorsForArticle(String id){
-        JSONObject artMetadata = Utils.doGETJSON(Constants.WIKI_NAME+Constants.FORMAT_AND_API+"&prop=categories%7Ccontributors&pageids="+id);
+        JSONObject artMetadata = ConnectionRequests.doGETJSON(Constants.WIKI_NAME+Constants.FORMAT_AND_API+"&prop=categories%7Ccontributors&pageids="+id);
         ArrayList<Agent> pageContributors=null;
         try{
             artMetadata = artMetadata.getJSONObject("query").getJSONObject("pages").getJSONObject(""+id);
             JSONArray contr = ((JSONObject)artMetadata).getJSONArray("contributors");
             pageContributors = new ArrayList<>();
-            for (Object aux:contr){
-               String contribName = ((JSONObject)aux).getString("name");
-               pageContributors.add(new Agent(contribName, null));
-           }
+            //for (Object aux:contr){
+            for(int i = 0; i < contr.length(); i++)
+            {
+            	JSONObject aux = (JSONObject) contr.get(i);
+            	String contribName = aux.getString("name");
+            	pageContributors.add(new Agent(contribName, null));
+            }
         }catch(Exception e){
             System.out.println("\tNo contributors for article ");
         }
@@ -286,19 +324,27 @@ public class WikiStatistics {
         int numArticles = this.getArticles().size();
         int numContribs = this.getContributors().size();
         int numWG = this.getArticlesFromCategory(Constants.CATEGORY_WORKING_GROUP).size();
+        int numMV = this.getArticlesFromCategory("Category:MeasuredVariable (L)").size();
+        int numPub = this.getArticlesFromCategory("Category:Publication (L)").size();
+        int numLoc = this.getArticlesFromCategory("Category:Location (L)").size();
         int numCategories = this.getNumCategories().size();
         int numCategoriesNotWG = getNumCategories().stream().filter(a->!a.getCategories().contains(Constants.CATEGORY_WORKING_GROUP)).collect(Collectors.toList()).size();
 //        for(Article a: getArticlesFromCategory(Constants.CATEGORY_WORKING_GROUP)){
 //            System.out.println(a.getName());
 //        }
-        int numPerson = this.getArticlesFromCategory(Constants.CATEGORY_PERSON).size();
-        int numDataset = this.getArticlesFromCategory(Constants.CATEGORY_DATASET).size();
+        int numPerson = this.getArticlesFromCategory("Category:Person (L)").size();
+        int numDataset = this.getArticlesFromCategory("Category:Dataset (L)").size();
         String s = "<h1>Summary of the articles in the wiki: </h1>\n";
         s+="<p>The wiki contains "+numArticles +" articles, edited by "+ numContribs +" contributors.<br/>\n";
         s+="Working group articles: "+numWG+".<br/>\n";
         s+="Person articles: "+numPerson+".<br/>\n";
         s+="Dataset articles: "+numDataset+".<br/>\n";
         s+="Category articles: "+numCategories+".<br/></p>\n";
+        
+        s+="Measured variables: "+numMV+".<br/></p>\n";//ADD HERE ALL THE RELATED TERMS TO ONTOLOGY (if necessary)
+        s+="Publications: "+numPub+".<br/></p>\n";
+        s+="Locations: "+numLoc+".<br/></p>\n";
+        
         s+="<div id=\"distribution\"></div>";
         s+="<script>\n" +
 "	var pie = new d3pie(\"distribution\", {\n" +
@@ -317,12 +363,17 @@ public class WikiStatistics {
 "				{ label: \"Dataset\", value: "+numDataset+" },\n" +
 "				{ label: \"Person\", value: "+numPerson+" },\n" +
 "				{ label: \"Working Group\", value: "+numWG+"},\n" +
-"				{ label: \"Categories\", value: "+numCategories+"},\n" +                
-"				{ label: \"Other\", value: "+(numArticles - numDataset - numPerson - numWG - numCategoriesNotWG)+"}\n" +
+"				{ label: \"Categories\", value: "+numCategories+"},\n" +
+"				{ label: \"Publications\", value: "+numPub+"},\n" +                
+"				{ label: \"Locations\", value: "+numLoc+"},\n" +                 
+"				{ label: \"MeasuredVariables\", value: "+numMV+"},\n" +
+"				{ label: \"Other\", value: "+(numArticles-numMV - numDataset - numPerson - numWG - numCategoriesNotWG - numPub - numLoc)+"}\n" +
 "			]\n" +
 "		}\n" +
 "	});\n" +
 "</script>";
+        
+        System.out.println(s);
         return s;
     }
     
@@ -426,9 +477,9 @@ public class WikiStatistics {
         //tests
         System.out.println(s.getWikiArticleDistributionSummary());
         
-        System.out.println(s.getWikiContributionSummary());
+        //System.out.println(s.getWikiContributionSummary());
         
-        System.out.println(s.getWikiCollaborationSummary());
+        //System.out.println(s.getWikiCollaborationSummary());
         
 //        do the json serialization and produce the stats.
         
