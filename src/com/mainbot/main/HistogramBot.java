@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.json.JSONException;
 
 import com.mainbot.components.Edit;
@@ -18,6 +20,7 @@ import com.mainbot.utility.Utils;
 
 public class HistogramBot extends Bot{
 
+	public static final Logger logger = Logger.getLogger(HistogramBot.class);
 	HistogramBot(String username) 
 	{
 		super(username);
@@ -72,13 +75,13 @@ public class HistogramBot extends Bot{
 		view2.changesPastNDaysView(revisionList,15);
 		
 		//5.23 Update: Newsletter/////////////
-		//view3.firstnewsletter(revisionList, 15);
+		//view3.newsletter(revisionList, 15);
 		System.out.println("VIEW3 CREATED!!");
 		///////////////////////////////////////
 		
-		//int revid2 = edit.edit(view2,mainbot); //edit the wiki
+		int revid2 = edit.edit(view2,mainbot, "Test"); //edit the wiki
 		
-		int revid3 = edit.edit(view3, mainbot, "Test");
+		//int revid3 = edit.edit(view3, mainbot, "Test");
 		
 		
 /*		erase = scanner.next();
@@ -90,8 +93,9 @@ public class HistogramBot extends Bot{
 	public static void main(String[] args) throws JSONException, IOException 
 	{
 		// TODO Auto-generated method stub
+		BasicConfigurator.configure();
 		HistogramBot mainbot = new HistogramBot("testBot", "testBot123");
-		System.out.println("histogram bot!!");
+		logger.info("Histogram Bot Created");
 		Utils util = new Utils();
 		util.login(mainbot);
 		createHistogram(mainbot);

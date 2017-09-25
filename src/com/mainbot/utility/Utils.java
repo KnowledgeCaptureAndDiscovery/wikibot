@@ -1,13 +1,16 @@
 package com.mainbot.utility;
 
+import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.mainbot.main.Bot;
+import com.mainbot.main.HistogramBot;
 
 
 public class Utils{
 	
+	public static final Logger logger = Logger.getLogger(Utils.class);
 	public static String queryFormulation()
 	{
 		StringBuilder queryString = new StringBuilder();
@@ -55,12 +58,12 @@ public class Utils{
 		//check login successful or not
 		if(login.getJSONObject("login").getString("result").equals("Success"))
 		{
-			System.out.println("LOGIN SUCCEEDED");
+			logger.info(mainbot.getUsername() + ": LOGIN SUCCEEDED");
 			return true;
 		}
 		else
 		{
-			System.out.println("LOGIN FAILED");
+			logger.info(mainbot.getUsername() + ": LOGIN FAILED");
 			return false;
 		}
 
@@ -75,7 +78,8 @@ public class Utils{
 		//System.out.println(ConnectionRequests.doPOSTJSON(user, mainbot.getSessionID()));		
 		
 		JSONObject post = ConnectionRequests.doPOSTJSON(user, mainbot.getSessionID());
-		
+		System.out.println(post);
+		System.out.println("-----------------------------------");
 		//System.out.println("This is checkLogin, a postJSON: " + post);
 		
 		

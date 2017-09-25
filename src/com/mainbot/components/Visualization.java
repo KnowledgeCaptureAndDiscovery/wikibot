@@ -88,7 +88,7 @@ public class Visualization {
 		writer.close();
 
 		result += "{{#widget:Iframe";
-		result += "|url=https://nehasuvarna.github.io/wikibot/visualizations/"+filename;
+		result += "|url=https://KnowledgeCaptureAndDiscovery.github.io/wikibot/visualizations/"+filename;
 		result += "|width=610";
 		result += "|height=342";
 		result += "|border=0}}";
