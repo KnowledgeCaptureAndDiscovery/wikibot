@@ -11,7 +11,6 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.google.common.net.HttpHeaders.USER_AGENT;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -33,7 +32,8 @@ public class ConnectionRequests {
 			HttpClient client = HttpClientBuilder.create().build();
 			HttpGet request = new HttpGet(query);
 
-			request.addHeader("User-Agent", USER_AGENT);
+			//request.addHeader("User-Agent", USER_AGENT);
+			request.addHeader("User-Agent", "Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.7.2) Gecko/20040803");
 			HttpResponse response = client.execute(request);
 			BufferedReader rd = new BufferedReader(
 					new InputStreamReader(response.getEntity().getContent()));
@@ -68,7 +68,8 @@ public class ConnectionRequests {
 			URL url = new URL(query);
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.addRequestProperty("Cookie", cookie);
-			conn.addRequestProperty("User-Agent", USER_AGENT);
+			//conn.addRequestProperty("User-Agent", USER_AGENT);
+			conn.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.7.2) Gecko/20040803");
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/x-www-urlencoded"); 
 			conn.setDoOutput(true);
