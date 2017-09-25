@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -27,6 +28,7 @@ public class NewsLetterBot extends Bot{
 	/*Bot for creating a newsletter from last week on the wiki.
 	 * On the page /newsletter
 	 * */
+	public static final Logger logger = Logger.getLogger(NewsLetterBot.class);
 	NewsLetterBot(String username) 
 	{
 		super(username);
@@ -47,7 +49,7 @@ public class NewsLetterBot extends Bot{
 		int user = catDef.countArticlesOfCategoryNDays("Category:Person_(L)", 7);
 		//int publication = catDef.countArticlesOfCategoryNDays("Category:Publication_(L)", 7);
 		int workingGroup = catDef.countArticlesOfCategoryNDays("Category:Working_Group", 7);
-		catDef.countArticlesOfCategory("Category:Working_Group");//this checks all updated wrking groups
+		catDef.countArticlesOfCategory("Category:Working_Group");//this checks all updated working groups
 		
 		ArrayList<String> datasetLinks = catDef.datasetLinks;
 		//ArrayList<String> publicationLinks = catDef.publicationLinks;
@@ -92,22 +94,15 @@ public class NewsLetterBot extends Bot{
 	
     public static int getPageId(String whichPage) throws JSONException
     {
-    	String url = "http://wiki.linked.earth/wiki/api.php?action=query&prop=pageprops&titles=" + whichPage + "&format=json";
-    	JSONObject art = ConnectionRequests.doGETJSON(url);
+    	Constants.params.put("action", "query");
+    	Constants.params.put("titles", whichPage);
+    	Utils util = new Utils();
+		String url = util.queryFormulation();
+    	JSONObject getPageinfo = ConnectionRequests.doGETJSON(url);
+    	JSONObject pages = getPageinfo.getJSONObject("query").getJSONObject("pages");
+    	String pageid = (String) pages.keys().next();//get the first key
 
-    	//System.out.println(art);
-    	
-    	//System.out.println(art.getJSONObject("query").getJSONObject("pages")   );
-    	JSONObject pages = art.getJSONObject("query").getJSONObject("pages");
-    	//pages are in this format:
-    	//{"33579":{"ns":0,"pageid":33579,"title":"Weekly Summary","pageprops":{"smw-semanticdata-status":"1"}}}
-    	//33579 is the pageid of queried page, so the iterator just need to return the first thing it gets
-    	
-    	Iterator allKeys = pages.keys();
-    	
-    	String key = (String) allKeys.next();//get the first key
-    	
-		return Integer.parseInt(key);
+		return Integer.parseInt(pageid);
     }
 
 	public static void main(String[] args) throws JSONException, IOException, ParseException
@@ -116,7 +111,7 @@ public class NewsLetterBot extends Bot{
 				
 		if(args.length != 3)
 		{
-			System.out.println("Input format: username, password, target page.");
+			logger.info("Input format: username, password, target page.");
 			System.exit(0);
 		}
 		else
@@ -130,7 +125,7 @@ public class NewsLetterBot extends Bot{
 				String whichPage = args[2];
 				if(getPageId(whichPage) == -1 )//accessing a nonexistent page
 				{
-					System.out.println("This page does not exist. Please try again.");
+					logger.info("This page does not exist. Please try again.");
 					System.exit(0);
 				}
 				else
@@ -141,7 +136,7 @@ public class NewsLetterBot extends Bot{
 			}
 			else
 			{
-				System.out.println("Exiting program for login failure.");
+				logger.info("Exiting program due to login failure.");
 				System.exit(0);
 			}
 			
