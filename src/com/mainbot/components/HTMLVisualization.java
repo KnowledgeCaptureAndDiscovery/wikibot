@@ -11,7 +11,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Map.Entry;
 
+import com.mainbot.dataobjects.Article;
 import com.mainbot.dataobjects.Revision;
 
 public class HTMLVisualization {
@@ -47,7 +49,7 @@ public class HTMLVisualization {
 
 
 		}
-		
+
 		//5.23 UPDATE: changing view for changes-pastnchanges.html///////
 		String htmlResult ="";
 		htmlResult += "<!DOCTYPE html>";
@@ -56,7 +58,7 @@ public class HTMLVisualization {
 		htmlResult += "\n<script type=\"text/javascript\" src=\"js/vis.js\"></script>";
 		htmlResult += "\n<link href=\"https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.css\" rel=\"stylesheet\" type=\"text/css\" />";
 		htmlResult += "\n</head>\n<body>\n";
-		
+
 		htmlResult += "\n<div id=\"visualization\"></div>";
 		htmlResult += "\n<script type=\"text/javascript\">";
 		htmlResult += "\nvar container = document.getElementById('visualization');";
@@ -71,17 +73,17 @@ public class HTMLVisualization {
 		htmlResult += "style:'bar',barChart: {width:50, align:'center'},drawPoints: false};";
 		htmlResult += "\nvar graph2d = new vis.Graph2d(container, dataset, options);";
 		htmlResult += "\n</script>\n</body>\n</html>";
-		
+
 		String filename = "changes-pastnchanges.html";
-		
+
 		BufferedWriter writer= new BufferedWriter(new FileWriter(new File("\\Users\\mtoley\\Desktop\\ResearchBackup\\wikibot\\visualizations\\"+filename)));		
 		writer.write(htmlResult);
 		writer.close();
 		/////////////////////////////////////////////////////////////////
-		
-		
-		
-		
+
+
+
+
 		result += "<br/><br/>";     
 		this.viewText = result;
 		this.section = "Recent changes in the wiki";
@@ -140,7 +142,7 @@ public class HTMLVisualization {
 		writer.close();
 
 		result += "{{#widget:Iframe";
-		result += "|url=https://nehasuvarna.github.io/wikibot/visualizations/"+filename;
+		result += "|url=https://KnowledgeCaptureAndDiscovery.github.io/wikibot/visualizations/"+filename;
 		//result += "|url=file:///Users/jieji/Desktop/ResearchBackup/visualizations/changes-pastndays.html";
 		result += "|width=610";
 		result += "|height=342";
@@ -152,10 +154,10 @@ public class HTMLVisualization {
 		System.out.println(result);
 
 	}
-	
-	
-	
-	
+
+
+
+
 	//5.23 Update: Newsletter///////////////////////////////
 	public void newsletter(int dataset, int user, int workingGroup, ArrayList<String> datasetLinks, 
 			ArrayList<String> datasetLinksRaw,  ArrayList<String> otherLinks, ArrayList<String> otherLinksRaw, 
@@ -163,50 +165,53 @@ public class HTMLVisualization {
 			ArrayList<Integer> revisedWorkingGroupLinksNum,ArrayList<String> mostActiveUserAndHisContribNum, int numOfDays) throws IOException
 	{	
 		String result = "";
-		
+
 		result += "<strong>During last 7 days: </strong><br/> " + "\n";
-		result += "<strong>" + dataset + " </strong>new datasets; <br/> \n";
-		result += "<strong>" + user + " </strong>new contributors; <br/>" + " \n";
+		result += "<strong>" + dataset + " </strong>new datasets. <br/> \n";
+		result += "<strong>" + user + " </strong>new contributors. <br/>" + " \n";
 		//result += "<strong>" + publication + " </strong>new publications; <br/> \n";
 		result += "<strong>" + workingGroup + " </strong>new working groups were created.  <br/> \n"  ;
-		
+
 		result += "<br/>";
-		
-		
+
+
 		String user1url, user2url, user3url, user4url, user5url;
 		user1url = "http://wiki.linked.earth/User:" + mostActiveUserAndHisContribNum.get(0);
 		user2url = "http://wiki.linked.earth/User:" + mostActiveUserAndHisContribNum.get(2);
 		user3url = "http://wiki.linked.earth/User:" + mostActiveUserAndHisContribNum.get(4);
 		user4url = "http://wiki.linked.earth/User:" + mostActiveUserAndHisContribNum.get(6);
 		user5url = "http://wiki.linked.earth/User:" + mostActiveUserAndHisContribNum.get(8);
-		
-		result += "Congratulations to <strong>" + "<span class='plainlinks'>" + "[" + user1url + " " + mostActiveUserAndHisContribNum.get(0) + "]" + "</span>" + " </strong> for being the top contributor with <strong>" + mostActiveUserAndHisContribNum.get(1) +"</strong> contributions this week!  Congratulations also to our top contributors: <br/>";
-		result += "2. <strong>" + "<span class='plainlinks'>" + "[" + user2url + " " + mostActiveUserAndHisContribNum.get(2) + "]" + "</span>"  + "</strong> " + " has <strong>" + mostActiveUserAndHisContribNum.get(3) + "</strong> contributions." + " <br/>";
-		
-		
-		//"<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
-		
-		
-		result += "3. <strong>" + "<span class='plainlinks'>" + "[" + user3url + " " + mostActiveUserAndHisContribNum.get(4) + "]" + "</span>"  + "</strong> " + " has <strong>" + mostActiveUserAndHisContribNum.get(5) + "</strong> contributions." + " <br/>";
-		result += "4. <strong>" + "<span class='plainlinks'>" + "[" + user4url + " " + mostActiveUserAndHisContribNum.get(6) + "]" + "</span>"  + "</strong> " + " has <strong>" + mostActiveUserAndHisContribNum.get(7) + "</strong> contributions." + " <br/>";
-		result += "5. <strong>" + "<span class='plainlinks'>" + "[" + user5url + " " + mostActiveUserAndHisContribNum.get(8) + "]" + "</span>"  + "</strong> " + " has <strong>" + mostActiveUserAndHisContribNum.get(9) + "</strong> contributions." + " <br/>";
-		
-//		result += "The most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(0) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(1) + "</strong> contributions. <br/> ";
-//		result += "The second most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(2) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(3) + "</strong> contributions. <br/> ";
-//		result += "The third most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(4) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(5) + "</strong> contributions. <br/> ";
-//		result += "The fourth most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(6) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(7) + "</strong> contributions. <br/> ";
-//		result += "The fourth most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(8) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(9) + "</strong> contributions. <br/> ";
 
-		
+		if (Integer.parseInt(mostActiveUserAndHisContribNum.get(1)) > 0){
+
+			result += "Congratulations to <strong>" + "<span class='plainlinks'>" + "[" + user1url + " " + mostActiveUserAndHisContribNum.get(0) + "]" + "</span>" + " </strong> for being the top contributor with <strong>" + mostActiveUserAndHisContribNum.get(1) +"</strong> contributions this week!  Congratulations also to our top contributors: <br/>";
+			result += "2. <strong>" + "<span class='plainlinks'>" + "[" + user2url + " " + mostActiveUserAndHisContribNum.get(2) + "]" + "</span>"  + "</strong> " + " has <strong>" + mostActiveUserAndHisContribNum.get(3) + "</strong> contributions." + " <br/>";
+			result += "3. <strong>" + "<span class='plainlinks'>" + "[" + user3url + " " + mostActiveUserAndHisContribNum.get(4) + "]" + "</span>"  + "</strong> " + " has <strong>" + mostActiveUserAndHisContribNum.get(5) + "</strong> contributions." + " <br/>";
+			result += "4. <strong>" + "<span class='plainlinks'>" + "[" + user4url + " " + mostActiveUserAndHisContribNum.get(6) + "]" + "</span>"  + "</strong> " + " has <strong>" + mostActiveUserAndHisContribNum.get(7) + "</strong> contributions." + " <br/>";
+			result += "5. <strong>" + "<span class='plainlinks'>" + "[" + user5url + " " + mostActiveUserAndHisContribNum.get(8) + "]" + "</span>"  + "</strong> " + " has <strong>" + mostActiveUserAndHisContribNum.get(9) + "</strong> contributions." + " <br/>";
+
+		}
+		//"<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
+
+
+
+
+		//		result += "The most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(0) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(1) + "</strong> contributions. <br/> ";
+		//		result += "The second most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(2) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(3) + "</strong> contributions. <br/> ";
+		//		result += "The third most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(4) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(5) + "</strong> contributions. <br/> ";
+		//		result += "The fourth most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(6) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(7) + "</strong> contributions. <br/> ";
+		//		result += "The fourth most active user during last 7 days is <strong> " + mostActiveUserAndHisContribNum.get(8) + "</strong>, who has <strong>" + mostActiveUserAndHisContribNum.get(9) + "</strong> contributions. <br/> ";
+
+
 		result += "<br/>";
-		
-		
-		
+
+
+
 		ArrayList<String> updatedwg = revisedWorkingGroupLinks;
 		ArrayList<String> updatedwgRaw = revisedWorkingGroupLinksRaw;
 		ArrayList<Integer> updatedwgNum = revisedWorkingGroupLinksNum;
-		
-//WORKING GROUP NEW PAGE LINKS////////////////////////////////////////
+
+		//WORKING GROUP NEW PAGE LINKS////////////////////////////////////////
 		if(updatedwg.size() != 0 )
 		{
 			result += "<strong> Here are the updated working groups: </strong><br/>";
@@ -216,9 +221,9 @@ public class HTMLVisualization {
 				for(int i = 0; i < 5; i++)
 				{	
 					//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-			
+
 					result += "<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
-								+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
+							+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
 				}
 				result += "<strong>[[#more-wg-links|More updated working group links are at the bottom.]]</strong>";
 			}
@@ -227,25 +232,25 @@ public class HTMLVisualization {
 				for(int i = 0; i < updatedwg.size(); i++)
 				{	
 					//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-			
+
 					result += "<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
-								+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
+							+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
 				}
 			}
-				
+
 			result += "</div>";
 			result += "<br/>";
 		}
-		
-////////////////////////////////////////////////////////
-		
-		
-		
-		
+
+		////////////////////////////////////////////////////////
+
+
+
+
 		ArrayList<String> buf = datasetLinks;
 		ArrayList<String> rawbuf = datasetLinksRaw;
 
-//DATASET LINKS////////////////////////////////////////
+		//DATASET LINKS////////////////////////////////////////
 		if(datasetLinks.size() != 0)
 		{
 			result += "<strong> Here are newly added datasets: </strong><br/>";
@@ -255,7 +260,7 @@ public class HTMLVisualization {
 				for(int i = 0; i < 5; i++)
 				{	
 					//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-			
+
 					result += "<span class='plainlinks'>" + "[" + buf.get(i) + " " + rawbuf.get(i) + "]" + "</span>" + "<br/>";
 				}
 				result += "<strong>[[#more-dataset-links|More updated working group links are at the bottom.]]</strong>";
@@ -265,54 +270,54 @@ public class HTMLVisualization {
 				for(int i = 0; i < buf.size(); i++)
 				{	
 					//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-			
+
 					result += "<span class='plainlinks'>" + "[" + buf.get(i) + " " + rawbuf.get(i) + "]" + "</span>" + "<br/>";
 				}
 			}
-			
-			
+
+
 			result += "</div>";
 			result += "<br/>";
 
 		}
-		
-////////////////////////////////////////////////////////		
-		
-//NEW PUBLICATION LINKS(NOT NEEDED ANYMORE)		
-//		result += "<strong> Here are the links to the new publications: </strong><br/>";
-//		
-//		result += "<div>";
-//		ArrayList<String> buf1 = publicationLinks;
-//		ArrayList<String> rawbuf1 = publicationLinksRaw;
-//
-//		if(buf1.size() > 5)
-//		{
-//			for(int i = 0; i < 5; i++)
-//			{
-//				result += "<span class='plainlinks'>" + "[" + buf1.get(i) + " " + rawbuf1.get(i) + "]" + "</span>" + "<br/>";
-//			}
-//			result += "<strong>More publication links are at the bottom.</strong>";
-//		}
-//		else
-//		{
-//			for(int i = 0; i < buf1.size(); i++)
-//			{
-//				result += "<span class='plainlinks'>" + "[" + buf1.get(i) + " " + rawbuf1.get(i) + "]" + "</span>" + "<br/>";
-//			}
-//		}
-//		
-//
-//		result += "</div>";
-//		result += "<br/>";
-		
-		
-//NEW OTHER MODIFIED PAGES/////////////////////////////////////////////	
-		
-		
+
+		////////////////////////////////////////////////////////		
+
+		//NEW PUBLICATION LINKS(NOT NEEDED ANYMORE)		
+		//		result += "<strong> Here are the links to the new publications: </strong><br/>";
+		//		
+		//		result += "<div>";
+		//		ArrayList<String> buf1 = publicationLinks;
+		//		ArrayList<String> rawbuf1 = publicationLinksRaw;
+		//
+		//		if(buf1.size() > 5)
+		//		{
+		//			for(int i = 0; i < 5; i++)
+		//			{
+		//				result += "<span class='plainlinks'>" + "[" + buf1.get(i) + " " + rawbuf1.get(i) + "]" + "</span>" + "<br/>";
+		//			}
+		//			result += "<strong>More publication links are at the bottom.</strong>";
+		//		}
+		//		else
+		//		{
+		//			for(int i = 0; i < buf1.size(); i++)
+		//			{
+		//				result += "<span class='plainlinks'>" + "[" + buf1.get(i) + " " + rawbuf1.get(i) + "]" + "</span>" + "<br/>";
+		//			}
+		//		}
+		//		
+		//
+		//		result += "</div>";
+		//		result += "<br/>";
+
+
+		//NEW OTHER MODIFIED PAGES/////////////////////////////////////////////	
+
+
 
 		ArrayList<String> temp = otherLinks;
 		ArrayList<String> rawtemp = otherLinksRaw;
-		
+
 		if(otherLinks.size() != 0)
 		{
 			result += "<strong>Here are other modified pages: </strong><br/>";
@@ -323,7 +328,7 @@ public class HTMLVisualization {
 				{
 					result += "<span class='plainlinks'>" + "[" + temp.get(i) + " " + rawtemp.get(i) + "]" + "</span>" + "<br/>";
 				}
-				result += "<strong>[[#more-other-links|More modified links are at the bottom.]]</strong>";
+				//				result += "<strong>[[#more-other-links|More modified links are at the bottom.]]</strong>";
 
 			}
 			else
@@ -337,18 +342,12 @@ public class HTMLVisualization {
 			result += "</div>";
 			result += "<br/>";
 		}
-		
 
-		
 
-//////////////////////////////////////////////////////////////////
-		result += "<br/>";
-		result += "<br/>";
-		result += "<br/>";
-		result += "<br/>";
-		result += "<br/>";
-		result += "<br/>";
-		
+
+
+		//////////////////////////////////////////////////////////////////
+
 
 		if(updatedwg.size() > 5)//other working group links
 		{
@@ -356,38 +355,37 @@ public class HTMLVisualization {
 			for(int i = 5; i < updatedwg.size(); i++)
 			{	
 				//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-		
+
 				result += "<span class='plainlinks'>" + "[" + updatedwg.get(i) + " " + updatedwgRaw.get(i) + "]" + "</span>" 
 						+ " has <strong>" + revisedWorkingGroupLinksNum.get(i) + "</strong> new contributions;" +"<br/>";
 			}
 			result += "<br/>";
 		}
-		
-		
+
+
 		if(buf.size() > 5)//other dataset links
 		{
 			result += "<strong id='more-dataset-links'> More dataset links: </strong> <br/>";
 			for(int i = 5; i < buf.size(); i++)
 			{	
 				//<span class="plainlinks">[https://www.mediawiki.org/w/index.php?title=Help:Links&action=edit Edit this page]</span>
-		
+
 				result += "<span class='plainlinks'>" + "[" + buf.get(i) + " " + rawbuf.get(i) + "]" + "</span>" + "<br/>";
 			}
 			result += "<br/>";
 		}
 
-		
-//		if(buf1.size() > 5)//PUBLICATION LINKS NOT NEEDED ANYMORE
-//		{
-//			result += "<strong> More pulication links:  </strong><br/>";
-//			for(int i = 5; i < buf1.size(); i++)
-//			{
-//				result += "<span class='plainlinks'>" + "[" + buf1.get(i) + " " + rawbuf1.get(i) + "]" + "</span>" + "<br/>";
-//			}
-//		}
+
+		//		if(buf1.size() > 5)//PUBLICATION LINKS NOT NEEDED ANYMORE
+		//		{
+		//			result += "<strong> More pulication links:  </strong><br/>";
+		//			for(int i = 5; i < buf1.size(); i++)
+		//			{
+		//				result += "<span class='plainlinks'>" + "[" + buf1.get(i) + " " + rawbuf1.get(i) + "]" + "</span>" + "<br/>";
+		//			}
+		//		}
 
 
-		
 		if(temp.size() > 5)//other other links
 		{
 			result += "<strong id='more-other-links'>More modified links: </strong><br/>";
@@ -397,30 +395,103 @@ public class HTMLVisualization {
 			}
 			result += "<br/>";
 		}
-		
 
 
- 
-		
+
+
+
 		this.viewText = result;
-		
-		
-		DateFormat dateFormat = new SimpleDateFormat("yyyy.MMM.dd HH.mmaaa");
+		DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
 		Calendar cal = new GregorianCalendar();
 		Date today = new Date();
 		String start = dateFormat.format(today);
 
 		cal.setTime(today);
-		cal.add(Calendar.DAY_OF_MONTH, -1*7);
+		cal.add(Calendar.DAY_OF_MONTH, -1*numOfDays);
 		Date from = cal.getTime();
 		String end = dateFormat.format(from);
-		
-		this.section = "Newsletter from <strong>" + end + "</strong> to <strong>" + start + "</strong>";
+
+		this.section = "Weekly Digest from <strong>" + end + "</strong> to <strong>" + start + "</strong>";
 
 		System.out.println("Newsletter created!!");
-		
+
 	}
+	
+	
+	public void newsletter_2(int numOfDays, HashMap<String, String> datasetLinks, HashMap<String, String> userLinks,
+			HashMap<String, String> workingGroupLinks, HashMap<Article, Integer> subWorkingGroupLinks) {
+		String result = "";
+		result += "<strong>During the last " + numOfDays + " days: </strong><br/> " + "\n";
+		result += "<strong>" + datasetLinks.size() + " </strong>new datasets. <br/> \n";
+		result += "<strong>" + userLinks.size() + " </strong>new contributors. <br/>" + " \n";
+		result += "<strong>" + workingGroupLinks.size() + " </strong>new working groups were created.  <br/> \n";
+		result += "<br/>";
+
+		if (datasetLinks.size() > 0) {
+			result += "<strong>Newly added datasets:</strong><br/>";
+			for (Entry<String, String> entry : datasetLinks.entrySet()) {
+				result += "<span class='plainlinks'>" + "[" + entry.getValue() + " " + entry.getKey() + "]" + "</span>";
+				result += "<br/>";
+			}
+			result += "<br/>";
+		}
+		
+		if (userLinks.size() > 0) {
+			result += "<strong>Newly added users:</strong><br/>";
+			for (Entry<String, String> entry : userLinks.entrySet()) {
+				result += "<span class='plainlinks'>" + "[" + entry.getValue() + " " + entry.getKey() + "]" + "</span>";
+				result += "<br/>";
+			}
+			result += "<br/>";
+		}
+		
+		if (workingGroupLinks.size() > 0) {
+			result += "<strong>Newly added working groups:</strong><br/>";
+			for (Entry<String, String> entry : workingGroupLinks.entrySet()) {
+				result += "<span class='plainlinks'>" + "[" + entry.getValue() + " " + entry.getKey() + "]" + "</span>";
+				result += "<br/>";
+			}
+			result += "<br/>";
+		}
+		
+		boolean printHeader = false;
+		if (subWorkingGroupLinks.size() > 0) {
+			for (Entry<Article, Integer> entry : subWorkingGroupLinks.entrySet()) {
+				if (entry.getValue() > 0) {
+					if (!printHeader){
+						result += "<strong>Updated working groups:</strong><br/>";
+						printHeader = true;
+					}
+					result += "<span class='plainlinks'>" + "[" + entry.getKey().getUrl() + " "
+							+ entry.getKey().getName() + "]";
+					result += " has " + entry.getValue() + " new contributions.</span>";
+					result += "<br/>";
+				}
+			}
+			result += "<br/>";
+		}
+		
+		
+		this.viewText = result;
+		DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+		Calendar cal = new GregorianCalendar();
+		Date today = new Date();
+		String start = dateFormat.format(today);
+
+		cal.setTime(today);
+		cal.add(Calendar.DAY_OF_MONTH, -1*numOfDays);
+		Date from = cal.getTime();
+		String end = dateFormat.format(from);
+
+		this.section = "Weekly Digest (" + end + " - " + start + ")";
+
+		System.out.println("Newsletter_2 created!!");
+	}
+	
+	
+	
+	
 	////////////////////////////////////////////////////////
 
-	
+
 }

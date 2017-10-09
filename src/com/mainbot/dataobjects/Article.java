@@ -14,6 +14,8 @@ public class Article {
     private String creationTime;
     private ArrayList<Revision> editHistory;
     private int numberOfEdits; //easier for counting
+    private String url;
+    private ArrayList<String> contributions;
 
     public Article() {
     }
@@ -79,7 +81,18 @@ public class Article {
     public void setName(String name) {
         this.name = name;
     }
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	
+	
     
+ 
     
 //    public ArrayList<Agent> getContributors(){
 //        ArrayList<Agent> contr= new ArrayList();
