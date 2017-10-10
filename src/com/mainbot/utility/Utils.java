@@ -1,5 +1,18 @@
 package com.mainbot.utility;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map.Entry;
+
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -93,6 +106,39 @@ public class Utils{
             return false;
         }
     }
+	
+	public static String generateUrl(String title){
+		return Constants.DOMAIN_URL+title.replace(" ", "-");
+	}
+	
+	public static String getEndTime(int numOfDays, String format){
+		DateFormat dateFormat = new SimpleDateFormat(format);
+		Calendar cal = new GregorianCalendar();
+		Date today = new Date();
+		String start = dateFormat.format(today);
+
+		cal.setTime(today);
+		cal.add(Calendar.DAY_OF_MONTH, -1*numOfDays);
+		Date from = cal.getTime();
+		String end = dateFormat.format(from);
+		return end;
+
+	}
+	public static LinkedHashMap<String, Integer> sortMapByValues(HashMap<String, Integer> map) {
+		List<Entry<String, Integer>> list = new LinkedList<Entry<String, Integer>>(map.entrySet());
+
+		Collections.sort(list, new Comparator<Entry<String, Integer>>() {
+			public int compare(Entry<String, Integer> a1, Entry<String, Integer> a2) {
+				return a2.getValue().compareTo(a1.getValue());
+			}
+		});
+
+		LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();
+		for (Entry<String, Integer> entry : list) {
+			sortedMap.put(entry.getKey(), entry.getValue());
+		}
+		return sortedMap;
+	}
 	
 
 }

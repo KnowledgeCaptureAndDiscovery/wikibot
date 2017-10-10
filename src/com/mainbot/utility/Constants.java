@@ -3,6 +3,7 @@ package com.mainbot.utility;
 import java.util.LinkedHashMap;
 
 public class Constants {
+	public static final String DOMAIN_URL = "http://wiki.linked.earth/";
     public final static String WIKI_NAME = "http://wiki.linked.earth/wiki/";//"http://wiki.linked.earth/snapshots/2017-04-15/";//
     public static final String FORMAT_AND_API = "api.php?action=query&format=json";
     

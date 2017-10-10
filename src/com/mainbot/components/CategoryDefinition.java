@@ -8,11 +8,15 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
@@ -23,6 +27,7 @@ import org.json.JSONObject;
 
 import com.mainbot.dataobjects.Article;
 import com.mainbot.utility.ConnectionRequests;
+import com.mainbot.utility.Utils;
 import com.sun.javafx.collections.MappingChange.Map;
 
 /**
@@ -557,6 +562,8 @@ public class CategoryDefinition {
 	}
 
 	
+	/*------------@author Neha---------------*/
+	
 	/**
 	 * This function returns the number of pages added to a category.
 	 * 
@@ -569,11 +576,10 @@ public class CategoryDefinition {
 	public static LinkedHashMap<String, String> getChangesInCategory(String categoryTitle, int numOfDays)
 			throws JSONException {
 
-		String endTime = getEndTime(numOfDays, "yyyy-MM-dd") + "T00:00:00Z";
+		String endTime = Utils.getEndTime(numOfDays, "yyyy-MM-dd") + "T00:00:00Z";
 		categoryTitle = categoryTitle.replace(' ', '_');
 		String categoryQuery = "http://wiki.linked.earth/wiki/api.php?action=query&cmtype=page&list=categorymembers&cmlimit=100&format=json&cmtitle="
 				+ categoryTitle + "&cmsort=timestamp&cmdir=desc&cmend=" + endTime;
-		
 		JSONObject pagesChanged = ConnectionRequests.doGETJSON(categoryQuery);
 		JSONArray categorymembers = pagesChanged.getJSONObject("query").getJSONArray("categorymembers");
 		LinkedHashMap<String, String> data = new LinkedHashMap<>();
@@ -581,11 +587,29 @@ public class CategoryDefinition {
 			JSONObject page = categorymembers.getJSONObject(i);
 			String title = page.getString("title").replace(' ', '_');
 			data.put(title, mainUrl + title);
-		}
-//		System.out.println("URL - " + categoryQuery + " - " + categorymembers.length() +  " - "+data.size());
-		
+		}		
 		return data;
-
+	}
+	
+	public static HashMap<String, Integer> getMaxContibutors(int numOfDays) throws JSONException{
+		String endTime = Utils.getEndTime(numOfDays, "yyyy-MM-dd") + "T00:00:00Z";
+		HashMap <String, Integer> contributionScore = new HashMap<>();
+		String allUsers = "http://wiki.linked.earth/wiki/api.php?action=query&list=allusers&aulimit=500&format=json";
+		JSONObject allUserObject = ConnectionRequests.doGETJSON(allUsers);
+		JSONArray userList = allUserObject.getJSONObject("query").getJSONArray("allusers");
+		for (int i = 0; i < userList.length(); i++) {
+			JSONObject user = userList.getJSONObject(i);
+			String username = user.getString("name").replace(" ", "_");
+			if (username.equals("TestBot"))
+				continue;
+			String userid = String.valueOf(user.get("userid")); 
+			String contributionQuery = "http://wiki.linked.earth/wiki/api.php?action=query&list=usercontribs&uclimit=500&format=json&ucuser="+username+"&ucend="+endTime;
+			JSONObject contributionObject = ConnectionRequests.doGETJSON(contributionQuery);
+			int contributionCount = contributionObject.getJSONObject("query").getJSONArray("usercontribs").length();
+			contributionScore.put(username, contributionCount);
+		}
+		contributionScore = (HashMap<String, Integer>)Utils.sortMapByValues(contributionScore);
+		return contributionScore;				
 	}
 	
 	public static LinkedHashMap<Article, Integer> getWGContributions(int numOfDays) throws JSONException{
@@ -600,50 +624,24 @@ public class CategoryDefinition {
 			title = wg.getString("title");
 			Article subcat = new Article();
 			subcat.setName(title);
-			subcat.setUrl(mainUrl + title.replace(' ', '_'));
+			subcat.setUrl(Utils.generateUrl(title));
 			subcat.setPageID(wg.getInt("pageid"));
 			LinkedHashMap<String, String> contributions = getChangesInCategory( title, numOfDays );
+			/*for (Entry<String, String> entry : contributions.entrySet()){
+				System.out.println(entry.getKey()+ " "+ entry.getValue());
+			}
+			System.out.println();*/
 			data.put(subcat, contributions.size());
 		}
+		/*for (Entry<Article, Integer> entry : data.entrySet()){
+			System.out.println(entry.getKey().getName() + " "+ entry.getValue());
+		}*/
 		return data;
 	}
 	
-	public static void getMaxContibutors(int numOfDays) throws JSONException{
-		String endTime = getEndTime(numOfDays, "yyyy-MM-dd") + "T00:00:00Z";
-		TreeMap <String, Integer> contributionScore = new TreeMap<>();
-		String allUsers = "http://wiki.linked.earth/wiki/api.php?action=query&list=allusers&aulimit=500&format=json";
-		JSONObject allUserObject = ConnectionRequests.doGETJSON(allUsers);
-		JSONArray userList = allUserObject.getJSONObject("query").getJSONArray("allusers");
-		for (int i = 0; i < userList.length(); i++) {
-			JSONObject user = userList.getJSONObject(i);
-			String username = user.getString("name").replace(" ", "_");
-			String userid = String.valueOf(user.get("userid")); 
-			
-			String contributionQuery = "http://wiki.linked.earth/wiki/api.php?action=query&list=usercontribs&uclimit=500&format=json&ucuser="+username+"&cmend="+endTime;
-			JSONObject contributionObject = ConnectionRequests.doGETJSON(contributionQuery);
-			int contributionCount = contributionObject.getJSONObject("query").getJSONArray("usercontribs").length();
-			contributionScore.put(username, contributionCount);
-		}
-		
-		for(Entry<String, Integer> entry : contributionScore.entrySet()){
-			System.out.println(entry.getKey()+ " " + entry.getValue());
-		}
-		
-	}
 	
-	public static String getEndTime(int numOfDays, String format){
-		DateFormat dateFormat = new SimpleDateFormat(format);
-		Calendar cal = new GregorianCalendar();
-		Date today = new Date();
-		String start = dateFormat.format(today);
-
-		cal.setTime(today);
-		cal.add(Calendar.DAY_OF_MONTH, -1*numOfDays);
-		Date from = cal.getTime();
-		String end = dateFormat.format(from);
-		return end;
-
-	}
+	
+	/*------------@author Neha---------------*/
 
 	// main for testing
 	// public static void main(String[] args)

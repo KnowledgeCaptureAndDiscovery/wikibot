@@ -43,52 +43,40 @@ public class NewsLetterBot extends Bot{
 		super(username, password);
 	}
 	
-
-	
-	public static void createNewsletter(Bot mainbot, String whichPage) throws JSONException, IOException, ParseException
+	/*------------@author Neha---------------*/
+	public static void generateNewsLetter(Bot mainbot, String whichPage) throws JSONException, IOException, ParseException
 	{
-		System.out.println("inside news letter function");
-		int numOfDays = 100;
+		System.out.println("generate news letter function");
+		int numOfDays = 7;
+		CategoryDefinition catDef = new CategoryDefinition();
+		HashMap<String, String> datasetLinks = catDef.getChangesInCategory("Category:Dataset_(L)", numOfDays);
+		HashMap<String, String> userLinks = catDef.getChangesInCategory("Category:Person_(L)", numOfDays);
+		HashMap<String, String> workingGroupLinks = catDef.getChangesInCategory("Category:Working_Group", numOfDays);
+		HashMap<Article, Integer> subWorkingGroupLinks = catDef.getWGContributions(numOfDays);
+		HashMap<String, Integer> maxContributorsList = catDef.getMaxContibutors(numOfDays);
+
+		HTMLVisualization view = new HTMLVisualization();
+		Edit edit = new Edit();
+		
+		int deleteLastRevId = catDef.getLastRevisionId(whichPage);
+		edit.undoRevisions(deleteLastRevId, false, mainbot, whichPage);//remove previous newsletter
+		
+		view.display_newsletter(numOfDays, datasetLinks, userLinks, workingGroupLinks, subWorkingGroupLinks,maxContributorsList);
+		int revid = edit.edit(view, mainbot, whichPage );
+	}
+	/*------------@author Neha---------------*/
+	
+	public static void createNewsletter(NewsLetterBot mainbot, String whichPage) throws JSONException, IOException, ParseException
+	{
 		CategoryDefinition catDef = new CategoryDefinition();
 		
-/*		int dataset = catDef.countArticlesOfCategoryNDays("Category:Dataset_(L)", numOfDays);
-		int user = catDef.countArticlesOfCategoryNDays("Category:Person_(L)", numOfDays);
-*/		
+		int dataset = catDef.countArticlesOfCategoryNDays("Category:Dataset_(L)", 7);
+		int user = catDef.countArticlesOfCategoryNDays("Category:Person_(L)", 7);
+		//int publication = catDef.countArticlesOfCategoryNDays("Category:Publication_(L)", 7);
+		int workingGroup = catDef.countArticlesOfCategoryNDays("Category:Working_Group", 7);
+		catDef.countArticlesOfCategory("Category:Working_Group");//this checks all updated wrking groups
 		
-		
-		
-		HashMap<String, String> datasetLinks = catDef.getChangesInCategory("Category:Dataset_(L)", numOfDays);
-		/*int dataset = datasetLinks.size();
-		for(Entry<String, String> entry : datasetLinks.entrySet()){
-			System.out.println(entry.getKey()+ " " + entry.getValue());
-		}*/
-		
-		HashMap<String, String> userLinks = catDef.getChangesInCategory("Category:Person_(L)", numOfDays);
-		/*int user = userLinks.size();
-		for(Entry<String, String> entry : userLinks.entrySet()){
-			System.out.println(entry.getKey()+ " " + entry.getValue());
-		}*/
-		
-		HashMap<String, String> workingGroupLinks = catDef.getChangesInCategory("Category:Working_Group", numOfDays);
-		/*int workingGroup = workingGroupLinks.size();
-		for(Entry<String, String> entry : workingGroupLinks.entrySet()){
-			System.out.println(entry.getKey()+ " " + entry.getValue());
-		}*/
-		
-		HashMap<Article, Integer> subWorkingGroupLinks = catDef.getWGContributions(numOfDays);
-		/*int subWorkingGroup = subWorkingGroupLinks.size();
-		for(Entry<Article, Integer> entry : subWorkingGroupLinks.entrySet()){
-			System.out.println(entry.getKey().getName()+ " " + entry.getKey().getUrl()+ " - " + entry.getValue());
-		}*/
-		
-		catDef.getMaxContibutors(numOfDays);
-		
-		
-		//int publication = catDef.countArticlesOfCategoryNDays("Category:Publication_(L)", numOfdays);
-//		int workingGroup = catDef.countArticlesOfCategoryNDays("Category:Working_Group", numOfDays);
-		catDef.countArticlesOfCategory("Category:Working_Group");//this checks all updated working groups
-		
-//		ArrayList<String> datasetLinks = catDef.datasetLinks;
+		ArrayList<String> datasetLinks = catDef.datasetLinks;
 		//ArrayList<String> publicationLinks = catDef.publicationLinks;
 		ArrayList<String> otherPageLinks = catDef.otherLinks;
 		
@@ -102,34 +90,30 @@ public class NewsLetterBot extends Bot{
 		ArrayList<String> revisedWorkingGroupLinksRaw = catDef.revisedWorkingGroupLinksRaw;
 		ArrayList<Integer> revisedWorkingGroupLinksNum = catDef.revisedWorkingGroupLinksNum;
 		
-		System.out.println(revisedWorkingGroupLinks.size());
-		
 		HTMLVisualization view = new HTMLVisualization();
 		Edit edit = new Edit();
 		
 		int deleteLastRevId = catDef.getLastRevisionId(whichPage);
+		//System.out.println("Last REVID is: " + deleteLastRevId);
 		edit.undoRevisions(deleteLastRevId, false, mainbot, whichPage);//remove previous newsletter
 		
-		view.newsletter_2(numOfDays, datasetLinks, userLinks, workingGroupLinks, subWorkingGroupLinks);
-		int revid = edit.edit(view, mainbot, whichPage );
-		/*view.newsletter(dataset, user, workingGroup, datasetLinks, datasetLinksRaw, 
+		
+		view.newsletter(dataset, user, workingGroup, datasetLinks, datasetLinksRaw, 
 				otherPageLinks, otherPageLinksRaw, 
-				revisedWorkingGroupLinks, revisedWorkingGroupLinksRaw, revisedWorkingGroupLinksNum, mostActiveUserAndHisContribNum, numOfDays);
+				revisedWorkingGroupLinks, revisedWorkingGroupLinksRaw, revisedWorkingGroupLinksNum, mostActiveUserAndHisContribNum, 7);
 		
-		int revid = edit.edit(view, mainbot, whichPage );
-	*/
-		
+		int revid = edit.edit(view, mainbot, whichPage);
 		//undoRevisions for testing use
-/*		System.out.println("THE REVID IS: " + revid);
-		Scanner scanner = new Scanner(System.in);
-		String erase = scanner.next();
-		if(!erase.isEmpty())
-		{
-			System.out.println("ENTERING IF ERASE CLAUSE!!");
-			edit.undoRevisions(revid, false, mainbot, whichPage); //testing purpose to undo the edits
-			System.out.println("ERASING FINISHED!!");
-		}
-*/		
+//		System.out.println("THE REVID IS: " + revid);
+//		Scanner scanner = new Scanner(System.in);
+//		String erase = scanner.next();
+//		if(!erase.isEmpty())
+//		{
+//			System.out.println("ENTERING IF ERASE CLAUSE!!");
+//			edit.undoRevisions(revid, false, mainbot); //testing purpose to undo the edits
+//			System.out.println("ERASING FINISHED!!");
+//		}
+		
 		
 	}
 	
@@ -172,7 +156,9 @@ public class NewsLetterBot extends Bot{
 				else
 				{
 					System.out.println("EDITING " + whichPage + "...");
-					createNewsletter(mainbot, whichPage);
+//					createNewsletter(mainbot, whichPage);
+					generateNewsLetter(mainbot, whichPage);
+
 				}
 			}
 			else
