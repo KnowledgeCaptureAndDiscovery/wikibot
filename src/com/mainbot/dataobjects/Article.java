@@ -20,7 +20,14 @@ public class Article {
     public Article() {
     }
 
-    public String getCreationTime() {
+    public Article(String name, int pageID, String url) {
+		// TODO Auto-generated constructor stub
+    	this.name = name;
+    	this.pageID = pageID;
+    	this.url = url;
+	}
+
+	public String getCreationTime() {
         return creationTime;
     }
 
