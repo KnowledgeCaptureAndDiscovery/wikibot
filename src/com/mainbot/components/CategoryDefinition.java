@@ -41,27 +41,27 @@ public class CategoryDefinition {
 	public static final String queryCategoryDefAllText = "http://wiki.linked.earth/wiki/api.php?&action=parse&prop=text&format=json&page=";
 
 	public static ArrayList<String> datasetLinks = new ArrayList<String>();// these
-																			// three
-																			// arrays
-																			// store
-																			// the
-																			// whole
-																			// link
+	// three
+	// arrays
+	// store
+	// the
+	// whole
+	// link
 	public static ArrayList<String> publicationLinks = new ArrayList<String>();// Ex:
-																				// http://wiki.linked.earth/M35003-4.Ruehlemann.1999
+	// http://wiki.linked.earth/M35003-4.Ruehlemann.1999
 	public static ArrayList<String> otherLinks = new ArrayList<String>();
 
 	public static ArrayList<String> datasetLinksRaw = new ArrayList<String>();// these
-																				// three
-																				// arrays
-																				// just
-																				// store
-																				// the
-																				// name
-																				// of
-																				// a
-																				// specific
-																				// webpage
+	// three
+	// arrays
+	// just
+	// store
+	// the
+	// name
+	// of
+	// a
+	// specific
+	// webpage
 	public static ArrayList<String> publicationLinksRaw = new ArrayList<String>();// Ex:M35003-4.Ruehlemann.1999
 	public static ArrayList<String> otherLinksRaw = new ArrayList<String>();
 
@@ -131,8 +131,6 @@ public class CategoryDefinition {
 		count += art.getJSONObject("query").getJSONArray("categorymembers").length();
 		return count;
 	}
-
-	
 
 	// extended from the above countMembers function
 	// this function can count all the category members which has been active
@@ -239,10 +237,10 @@ public class CategoryDefinition {
 				if (checkIfOneWorkingGroupIsUpdated(t, pageid) > 0) {
 					revisedWorkingGroupLinks.add("http://wiki.linked.earth/" + t);
 					revisedWorkingGroupLinksRaw.add(t.substring(9, t.length()));// cut
-																				// out
-																				// the
-																				// initial
-																				// "Category:"
+					// out
+					// the
+					// initial
+					// "Category:"
 					revisedWorkingGroupLinksNum.add(checkIfOneWorkingGroupIsUpdated(t, pageid));
 				}
 
@@ -289,7 +287,7 @@ public class CategoryDefinition {
 		}
 		return total;
 	}
-	
+
 	// extended from the above countArticlesOfCategory function
 	// this function can count all the articles which has been updated during a
 	// given time period
@@ -343,7 +341,7 @@ public class CategoryDefinition {
 
 		String url = "http://wiki.linked.earth/wiki/api.php?action=query&list=usercontribs&uclimit=500&ucuser="
 				+ username + "&ucstart=" + start + "&ucend=" + end + "&format=json" + "&rawcontinue";
-//		System.out.println(url);
+		// System.out.println(url);
 		JSONObject art = ConnectionRequests.doGETJSON(url);
 		// System.out.println(art);;
 
@@ -371,7 +369,7 @@ public class CategoryDefinition {
 			throws JSONException, UnsupportedEncodingException {
 		String url = "http://wiki.linked.earth/wiki/api.php?action=query&list=allusers&aulimit=500&rawcontinue&auprop="
 				+ URLEncoder.encode("title|name|editcount", "UTF-8") + "&format=json";
-//		System.out.println(url);
+		// System.out.println(url);
 		JSONObject art = ConnectionRequests.doGETJSON(url);
 
 		ArrayList<String> res = new ArrayList<String>();
@@ -400,8 +398,8 @@ public class CategoryDefinition {
 
 			if (temp.contains(" ")) {
 				continue;// skipping those names with white space
-							// media wiki can't read a username with white
-							// space, so here is a compromise
+				// media wiki can't read a username with white
+				// space, so here is a compromise
 			} else if (temp.equals("TestBot")) {
 				continue;// need to filter testbot
 			} else {
@@ -561,39 +559,40 @@ public class CategoryDefinition {
 		return Integer.parseInt(key);
 	}
 
-	
 	/*------------@author Neha---------------*/
-	
+
 	/**
 	 * This function returns the number of pages added to a category.
 	 * 
 	 * 
-	 * @param categoryTitle Category title to check for new pages
-	 * @param numOfDays	Additions dating back to days
+	 * @param categoryTitle
+	 *            Category title to check for new pages
+	 * @param numOfDays
+	 *            Additions dating back to days
 	 * @return count of changes
 	 * @throws JSONException
 	 */
-	public static LinkedHashMap<String, String> getChangesInCategory(String categoryTitle, int numOfDays)
+	public static LinkedHashMap<String, String> getAdditionToCategory(String categoryTitle, int numOfDays)
 			throws JSONException {
-
+		LinkedHashMap<String, String> data = new LinkedHashMap<>();
 		String endTime = Utils.getEndTime(numOfDays, "yyyy-MM-dd") + "T00:00:00Z";
-		categoryTitle = categoryTitle.replace(' ', '_');
+
 		String categoryQuery = "http://wiki.linked.earth/wiki/api.php?action=query&cmtype=page&list=categorymembers&cmlimit=100&format=json&cmtitle="
-				+ categoryTitle + "&cmsort=timestamp&cmdir=desc&cmend=" + endTime;
+				+ categoryTitle.replace(' ', '_') + "&cmsort=timestamp&cmdir=desc&cmend=" + endTime;
 		JSONObject pagesChanged = ConnectionRequests.doGETJSON(categoryQuery);
 		JSONArray categorymembers = pagesChanged.getJSONObject("query").getJSONArray("categorymembers");
-		LinkedHashMap<String, String> data = new LinkedHashMap<>();
+
 		for (int i = 0; i < categorymembers.length(); i++) {
 			JSONObject page = categorymembers.getJSONObject(i);
 			String title = page.getString("title").replace(' ', '_');
 			data.put(title, mainUrl + title);
-		}		
+		}
 		return data;
 	}
-	
-	public static HashMap<String, Integer> getMaxContibutors(int numOfDays) throws JSONException{
+
+	public static HashMap<String, Integer> getMaxContibutors(int numOfDays) throws JSONException {
 		String endTime = Utils.getEndTime(numOfDays, "yyyy-MM-dd") + "T00:00:00Z";
-		HashMap <String, Integer> contributionScore = new HashMap<>();
+		HashMap<String, Integer> contributionScore = new HashMap<>();
 		String allUsers = "http://wiki.linked.earth/wiki/api.php?action=query&list=allusers&aulimit=500&format=json";
 		JSONObject allUserObject = ConnectionRequests.doGETJSON(allUsers);
 		JSONArray userList = allUserObject.getJSONObject("query").getJSONArray("allusers");
@@ -602,45 +601,74 @@ public class CategoryDefinition {
 			String username = user.getString("name").replace(" ", "_");
 			if (username.equals("TestBot"))
 				continue;
-			String userid = String.valueOf(user.get("userid")); 
-			String contributionQuery = "http://wiki.linked.earth/wiki/api.php?action=query&list=usercontribs&uclimit=500&format=json&ucuser="+username+"&ucend="+endTime;
+			String userid = String.valueOf(user.get("userid"));
+			String contributionQuery = "http://wiki.linked.earth/wiki/api.php?action=query&list=usercontribs&uclimit=500&format=json&ucuser="
+					+ username + "&ucend=" + endTime;
 			JSONObject contributionObject = ConnectionRequests.doGETJSON(contributionQuery);
 			int contributionCount = contributionObject.getJSONObject("query").getJSONArray("usercontribs").length();
 			contributionScore.put(username, contributionCount);
 		}
-		contributionScore = (HashMap<String, Integer>)Utils.sortMapByValues(contributionScore);
-		return contributionScore;				
+		contributionScore = (HashMap<String, Integer>) Utils.sortMapByValues(contributionScore);
+		return contributionScore;
 	}
-	
-	public static LinkedHashMap<Article, Integer> getWGContributions(int numOfDays) throws JSONException{
-		
-		String title = "";
-		LinkedHashMap<Article, Integer> data = new LinkedHashMap<>();
+
+	public static LinkedHashMap<Article, Integer> getWGContributions(int numOfDays) throws JSONException {
+		String subcatTitle = "";
+		int subcatId = 0;
+		int count = 0;
+		LinkedHashMap<Article, Integer> wgContriMap = new LinkedHashMap<>();
+		List<Integer> changedPages = getRecentlyChangedPages(numOfDays);
+
 		String allWGQuery = "http://wiki.linked.earth/wiki/api.php?action=query&cmtype=subcat&list=categorymembers&cmlimit=100&format=json&cmtitle=Category:Working_Group";
 		JSONObject allWGObject = ConnectionRequests.doGETJSON(allWGQuery);
 		JSONArray categorymembers = allWGObject.getJSONObject("query").getJSONArray("categorymembers");
+
 		for (int i = 0; i < categorymembers.length(); i++) {
 			JSONObject wg = categorymembers.getJSONObject(i);
-			title = wg.getString("title");
-			Article subcat = new Article();
-			subcat.setName(title);
-			subcat.setUrl(Utils.generateUrl(title));
-			subcat.setPageID(wg.getInt("pageid"));
-			LinkedHashMap<String, String> contributions = getChangesInCategory( title, numOfDays );
-			/*for (Entry<String, String> entry : contributions.entrySet()){
-				System.out.println(entry.getKey()+ " "+ entry.getValue());
+			subcatId = wg.getInt("pageid");
+			subcatTitle = wg.getString("title");
+			Article subcat = new Article(subcatTitle, subcatId, Utils.generateUrl(subcatTitle));
+
+			// Check if category title is in the recent change list
+			if (changedPages.contains(subcatId)) {
+				count += Collections.frequency(changedPages, subcatId);
 			}
-			System.out.println();*/
-			data.put(subcat, contributions.size());
+
+			// Check if category members is in the recent change list
+			String categoryMemberQuery = "http://wiki.linked.earth/wiki/api.php?action=query&cmtype=page&list=categorymembers&format=json&cmtitle="
+					+ subcatTitle.replace(" ", "_");
+			JSONObject catMemObject = ConnectionRequests.doGETJSON(categoryMemberQuery);
+			JSONArray catMem = catMemObject.getJSONObject("query").getJSONArray("categorymembers");
+
+			for (int index = 0; index < catMem.length(); index++) {
+				int memID = catMem.getJSONObject(index).getInt("pageid");
+				if (changedPages.contains(memID)) {
+					count += Collections.frequency(changedPages, memID);
+				}
+			}
+
+			wgContriMap.put(subcat, count);
+			count = 0;
 		}
-		/*for (Entry<Article, Integer> entry : data.entrySet()){
-			System.out.println(entry.getKey().getName() + " "+ entry.getValue());
-		}*/
-		return data;
+
+		return wgContriMap;
 	}
-	
-	
-	
+
+	public static List<Integer> getRecentlyChangedPages(int numOfDays) throws JSONException {
+		List<Integer> pageIDs = new ArrayList<>();
+		String endTime = Utils.getEndTime(numOfDays, "yyyy-MM-dd") + "T00:00:00Z";
+		String recentChangesQuery = "http://wiki.linked.earth/wiki/api.php?action=query&format=json&list=recentchanges&rcexcludeuser=TestBot&rcstart="
+				+ endTime;
+		JSONObject recentChangesObject = ConnectionRequests.doGETJSON(recentChangesQuery);
+		JSONArray recentChangesArray = recentChangesObject.getJSONObject("query").getJSONArray("recentchanges");
+
+		for (int i = 0; i < recentChangesArray.length(); i++) {
+			pageIDs.add(recentChangesArray.getJSONObject(i).getInt("pageid"));
+		}
+
+		return pageIDs;
+	}
+
 	/*------------@author Neha---------------*/
 
 	// main for testing
