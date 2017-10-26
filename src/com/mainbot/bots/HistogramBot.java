@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 import org.json.JSONException;
 
 import com.mainbot.components.Edit;
-import com.mainbot.components.HTMLVisualization;
+import com.mainbot.components.Visualization;
 import com.mainbot.components.RetrieveData;
 import com.mainbot.dataobjects.Revision;
 import com.mainbot.utility.Utils;
@@ -36,15 +36,15 @@ public class HistogramBot extends Bot{
 	{
 		ArrayList<Revision> revisionList;
 		Edit edit = new Edit();
-		HTMLVisualization view = new HTMLVisualization();
+		Visualization view = new Visualization();
 		System.out.println("1ST VIEW(for past n changes) CREATED!!!!");
 		
 		
-		HTMLVisualization view2 = new HTMLVisualization();
+		Visualization view2 = new Visualization();
 		System.out.println("2ND VIEW(for past n days) CREATED!!!!");
 		
 		//5.23 Update: Newsletter////////////////////////
-		HTMLVisualization view3 = new HTMLVisualization();
+		Visualization view3 = new Visualization();
 		System.out.println("3RD VIEW(for newsletter) CREATED!!!");
 		/////////////////////////////////////////////////
 		

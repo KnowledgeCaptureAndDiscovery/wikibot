@@ -8,7 +8,6 @@ import org.json.JSONException;
 
 import com.mainbot.components.RetrieveData;
 import com.mainbot.components.Edit;
-import com.mainbot.components.HTMLVisualization;
 import com.mainbot.dataobjects.Revision;
 import com.mainbot.utility.Utils;
 

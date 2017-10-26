@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 import com.mainbot.components.CategoryDefinition;
 import com.mainbot.components.Edit;
-import com.mainbot.components.HTMLVisualization;
+import com.mainbot.components.Visualization;
 import com.mainbot.dataobjects.Article;
 import com.mainbot.dataobjects.Revision;
 import com.mainbot.utility.ConnectionRequests;
@@ -56,9 +56,9 @@ public class NewsLetterBot extends Bot {
 	 */
 	public int generateNewsLetter() throws JSONException, IOException {
 		CategoryDefinition catDef = new CategoryDefinition();
-		HTMLVisualization view = new HTMLVisualization();
+		Visualization view = new Visualization();
 		Edit edit = new Edit();
-		int deleteLastRevId, revid = 0;
+		int deleteLastRevId, revid;
 
 		HashMap<String, String> datasetLinks = catDef.getAdditionToCategory("Category:Dataset_(L)", this.numOfDays);
 		HashMap<String, String> userLinks = catDef.getAdditionToCategory("Category:Person_(L)", this.numOfDays);
@@ -67,71 +67,14 @@ public class NewsLetterBot extends Bot {
 		HashMap<String, Integer> maxContributorsList = catDef.getMaxContibutors(this.numOfDays);
 
 		/*-----Remove previous Newsletter----*/
-//		deleteLastRevId = catDef.getLastRevisionId(this.newsLetterPage);
-//		edit.undoRevisions(deleteLastRevId, false, this, this.newsLetterPage);
-//
-//		/*-----Write newsletter in the newsletter page----*/
-//		view.display_newsletter(this.numOfDays, datasetLinks, userLinks, workingGroupLinks, subWorkingGroupLinks,maxContributorsList);
-//		revid = edit.edit(view, this, this.newsLetterPage);
-//		
+		deleteLastRevId = catDef.getLastRevisionId(this.newsLetterPage);
+		edit.undoRevisions(deleteLastRevId, false, this, this.newsLetterPage);
+
+		/*-----Write newsletter in the newsletter page----*/
+		view.display_newsletter(this.numOfDays, datasetLinks, userLinks, workingGroupLinks, subWorkingGroupLinks,maxContributorsList);
+		revid = edit.edit(view, this, this.newsLetterPage);
+		
 		return revid;
-	}
-
-	public static void createNewsletter(NewsLetterBot mainbot, String whichPage)
-			throws JSONException, IOException, ParseException {
-		CategoryDefinition catDef = new CategoryDefinition();
-
-		int dataset = catDef.countArticlesOfCategoryNDays("Category:Dataset_(L)", 7);
-		int user = catDef.countArticlesOfCategoryNDays("Category:Person_(L)", 7);
-		// int publication =
-		// catDef.countArticlesOfCategoryNDays("Category:Publication_(L)", 7);
-		int workingGroup = catDef.countArticlesOfCategoryNDays("Category:Working_Group", 7);
-		catDef.countArticlesOfCategory("Category:Working_Group");// this checks
-		// all
-		// updated
-		// wrking
-		// groups
-
-		ArrayList<String> datasetLinks = catDef.datasetLinks;
-		// ArrayList<String> publicationLinks = catDef.publicationLinks;
-		ArrayList<String> otherPageLinks = catDef.otherLinks;
-
-		ArrayList<String> datasetLinksRaw = catDef.datasetLinksRaw;
-		// ArrayList<String> publicationLinksRaw = catDef.publicationLinksRaw;
-		ArrayList<String> otherPageLinksRaw = catDef.otherLinksRaw;
-
-		ArrayList<String> mostActiveUserAndHisContribNum = catDef.getMostActiveUserAndHisContribs();
-
-		ArrayList<String> revisedWorkingGroupLinks = catDef.revisedWorkingGroupLinks;
-		ArrayList<String> revisedWorkingGroupLinksRaw = catDef.revisedWorkingGroupLinksRaw;
-		ArrayList<Integer> revisedWorkingGroupLinksNum = catDef.revisedWorkingGroupLinksNum;
-
-		HTMLVisualization view = new HTMLVisualization();
-		Edit edit = new Edit();
-
-		int deleteLastRevId = catDef.getLastRevisionId(whichPage);
-		// System.out.println("Last REVID is: " + deleteLastRevId);
-		edit.undoRevisions(deleteLastRevId, false, mainbot, whichPage);// remove
-		// previous
-		// newsletter
-
-		view.newsletter(dataset, user, workingGroup, datasetLinks, datasetLinksRaw, otherPageLinks, otherPageLinksRaw,
-				revisedWorkingGroupLinks, revisedWorkingGroupLinksRaw, revisedWorkingGroupLinksNum,
-				mostActiveUserAndHisContribNum, 7);
-
-		int revid = edit.edit(view, mainbot, whichPage);
-		// undoRevisions for testing use
-		// System.out.println("THE REVID IS: " + revid);
-		// Scanner scanner = new Scanner(System.in);
-		// String erase = scanner.next();
-		// if(!erase.isEmpty())
-		// {
-		// System.out.println("ENTERING IF ERASE CLAUSE!!");
-		// edit.undoRevisions(revid, false, mainbot); //testing purpose to undo
-		// the edits
-		// System.out.println("ERASING FINISHED!!");
-		// }
-
 	}
 
 }
