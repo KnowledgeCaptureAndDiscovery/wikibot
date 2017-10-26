@@ -15,7 +15,7 @@ public class Edit {
 	static ConnectionRequests conn = new ConnectionRequests();
 	static Utils util = new Utils();
 	
-	public static int edit(HTMLVisualization view , Bot mainbot, String whichPage) throws JSONException, UnsupportedEncodingException{
+	public static int edit(Visualization view , Bot mainbot, String whichPage) throws JSONException, UnsupportedEncodingException{
 		Constants.params.put("meta", "tokens");
 		Constants.params.put("action", "query");
 		
@@ -35,9 +35,9 @@ public class Edit {
 		Constants.params.put("title", whichPage);
 		
 		String editQuery = Utils.queryFormulation();
-		//String editQuery = WIKI_NAME+ "api.php?action=edit&title=Test&section=new&sectiontitle=EditAPITest&text="+edittext+"&format=json";
+		System.out.println(editQuery);
 		JSONObject edit = conn.postFuncWithParams(editQuery, mainbot.getSessionID(), token);
-		//System.out.println(edit);
+		System.out.println(edit);
 		return edit.getJSONObject("edit").getInt("newrevid");
 	}
 	
