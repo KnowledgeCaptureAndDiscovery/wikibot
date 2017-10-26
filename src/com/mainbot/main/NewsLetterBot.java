@@ -49,9 +49,9 @@ public class NewsLetterBot extends Bot{
 		System.out.println("generate news letter function");
 		int numOfDays = 7;
 		CategoryDefinition catDef = new CategoryDefinition();
-		HashMap<String, String> datasetLinks = catDef.getChangesInCategory("Category:Dataset_(L)", numOfDays);
-		HashMap<String, String> userLinks = catDef.getChangesInCategory("Category:Person_(L)", numOfDays);
-		HashMap<String, String> workingGroupLinks = catDef.getChangesInCategory("Category:Working_Group", numOfDays);
+		HashMap<String, String> datasetLinks = catDef.getAdditionToCategory("Category:Dataset_(L)", numOfDays);
+		HashMap<String, String> userLinks = catDef.getAdditionToCategory("Category:Person_(L)", numOfDays);
+		HashMap<String, String> workingGroupLinks = catDef.getAdditionToCategory("Category:Working_Group", numOfDays);
 		HashMap<Article, Integer> subWorkingGroupLinks = catDef.getWGContributions(numOfDays);
 		HashMap<String, Integer> maxContributorsList = catDef.getMaxContibutors(numOfDays);
 
