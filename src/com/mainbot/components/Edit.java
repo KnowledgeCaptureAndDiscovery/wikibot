@@ -31,7 +31,7 @@ public class Edit {
 		Constants.params.put("text", URLEncoder.encode(view.viewText, "UTF-8"));
 		Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
 		Constants.params.put("contentformat", "text/x-wiki");
-		Constants.params.put("section", "new");
+		Constants.params.put("section", "0");
 		Constants.params.put("title", whichPage);
 		
 		String editQuery = Utils.queryFormulation();
