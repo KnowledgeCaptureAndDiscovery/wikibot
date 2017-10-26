@@ -1,4 +1,4 @@
-package com.mainbot.main;
+package com.mainbot.bots;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,13 +26,13 @@ public class HistogramBot extends Bot{
 		super(username);
 	}
 	
-	HistogramBot(String username, String password)
+	public HistogramBot(String username, String password)
 	{
 		super(username, password);
 	}
 	
 	
-	public static void createHistogram(HistogramBot mainbot) throws JSONException, IOException
+	public void createHistogram() throws JSONException, IOException
 	{
 		ArrayList<Revision> revisionList;
 		Edit edit = new Edit();
@@ -60,7 +60,7 @@ public class HistogramBot extends Bot{
 		
 		
 		view.recentChangeView(revisionList);
-		int revid = edit.edit(view,mainbot, "Test"); //edit the wiki
+		int revid = edit.edit(view, this, "Test"); //edit the wiki
 		
 		
 //		Scanner scanner = new Scanner(System.in);
@@ -79,7 +79,7 @@ public class HistogramBot extends Bot{
 		System.out.println("VIEW3 CREATED!!");
 		///////////////////////////////////////
 		
-		int revid2 = edit.edit(view2,mainbot, "Test"); //edit the wiki
+		int revid2 = edit.edit(view2, this, "Test"); //edit the wiki
 		
 		//int revid3 = edit.edit(view3, mainbot, "Test");
 		
@@ -90,14 +90,5 @@ public class HistogramBot extends Bot{
 */
 	}
 	
-	public static void main(String[] args) throws JSONException, IOException 
-	{
-		// TODO Auto-generated method stub
-		BasicConfigurator.configure();
-		HistogramBot mainbot = new HistogramBot("testBot", "testBot123");
-		logger.info("Histogram Bot Created");
-		Utils util = new Utils();
-		util.login(mainbot);
-		createHistogram(mainbot);
-	}
+
 }

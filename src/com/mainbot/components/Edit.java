@@ -6,7 +6,7 @@ import java.net.URLEncoder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.mainbot.main.Bot;
+import com.mainbot.bots.Bot;
 import com.mainbot.utility.ConnectionRequests;
 import com.mainbot.utility.Constants;
 import com.mainbot.utility.Utils;
@@ -29,7 +29,7 @@ public class Edit {
 		
 		Constants.params.put("action", "edit");
 		Constants.params.put("text", URLEncoder.encode(view.viewText, "UTF-8"));
-		Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
+//		Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
 		Constants.params.put("contentformat", "text/x-wiki");
 		Constants.params.put("section", "0");
 		Constants.params.put("title", whichPage);

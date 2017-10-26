@@ -13,8 +13,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.mainbot.bots.Bot;
 import com.mainbot.dataobjects.Revision;
-import com.mainbot.main.Bot;
 import com.mainbot.utility.*;
 import static com.mainbot.utility.Constants.FORMAT_AND_API;
 import static com.mainbot.utility.Constants.WIKI_NAME;

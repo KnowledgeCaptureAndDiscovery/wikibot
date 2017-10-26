@@ -1,4 +1,4 @@
-package com.mainbot.main;
+package com.mainbot.bots;
 
 import java.io.IOException;
 import java.util.ArrayList;
