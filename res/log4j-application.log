@@ -2,3 +2,384 @@
 2017-10-26 16:50:42 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
 2017-10-26 16:50:42 INFO  NewsLetter:31 - LOGIN SUCCESS!
 2017-10-26 16:50:42 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 10:33:33 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 10:33:33 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 10:33:33 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 10:33:35 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 10:35:14 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 10:35:15 INFO  NewsLetter:38 - Revision ID for the newsletter: 77093
+2017-10-27 10:36:46 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 10:36:46 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 10:36:46 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 10:36:47 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 10:38:49 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 10:38:50 INFO  NewsLetter:38 - Revision ID for the newsletter: 77095
+2017-10-27 10:43:25 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 10:43:25 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 10:43:25 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 10:43:25 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 10:45:39 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 10:45:40 INFO  NewsLetter:38 - Revision ID for the newsletter: 77098
+2017-10-27 10:47:47 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 10:47:47 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 10:47:47 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 10:47:52 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 10:48:21 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 10:48:21 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 10:48:21 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 10:48:21 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 10:49:46 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 10:49:47 INFO  NewsLetter:38 - Revision ID for the newsletter: 77101
+2017-10-27 10:51:45 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 10:51:45 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 10:51:45 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 10:51:46 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 11:01:27 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 11:01:27 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 11:01:27 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 11:01:29 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 11:43:02 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 11:43:02 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 11:43:02 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 11:43:03 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 11:44:39 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 11:44:40 INFO  NewsLetter:38 - Revision ID for the newsletter: 77103
+2017-10-27 11:48:02 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 11:48:02 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 11:48:02 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 11:48:04 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 11:50:52 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 11:50:53 INFO  NewsLetter:38 - Revision ID for the newsletter: 77105
+2017-10-27 11:54:02 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 11:54:02 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 11:54:02 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 11:54:03 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 11:55:34 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 11:55:35 INFO  NewsLetter:38 - Revision ID for the newsletter: 77107
+2017-10-27 12:00:32 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:00:32 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:00:32 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:00:33 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 12:01:57 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 12:01:58 INFO  NewsLetter:38 - Revision ID for the newsletter: 77109
+2017-10-27 12:38:40 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:38:40 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:38:40 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:38:42 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 12:42:39 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:42:39 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:42:39 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:42:42 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 12:45:00 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:45:00 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:45:00 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:45:01 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 12:48:30 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:48:30 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:48:30 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:48:32 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 12:48:50 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:48:50 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:48:50 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:48:51 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 12:49:56 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:49:56 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:49:56 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:49:57 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 12:55:19 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:55:19 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:55:19 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:55:26 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 12:56:58 INFO  Visualization:205 - Newsletter Created.
+2017-10-27 12:59:15 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 12:59:15 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 12:59:15 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 12:59:17 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 13:01:00 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-10-27 13:02:56 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 13:02:56 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 13:02:56 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 13:03:00 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 13:06:10 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-10-27 13:08:48 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 13:08:49 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 13:08:49 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 13:08:51 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 13:09:04 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 13:09:04 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 13:09:04 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 13:09:05 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 13:09:23 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 13:09:23 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 13:09:23 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 13:09:24 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 13:09:54 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 13:09:54 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 13:09:54 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 13:09:55 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 13:13:09 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 13:13:09 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 13:13:09 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 13:13:10 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 13:13:18 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-10-27 13:13:56 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 13:13:56 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 13:13:56 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 13:13:58 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-10-27 13:14:05 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-10-27 13:16:51 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-10-27 13:16:52 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-10-27 13:16:52 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-10-27 13:16:57 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-11-03 10:56:34 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 10:56:34 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 10:56:34 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 10:56:36 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-11-03 10:56:41 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 10:56:41 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 10:56:41 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 10:56:42 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-11-03 10:57:37 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 10:57:37 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 10:57:37 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 10:57:39 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-11-03 10:58:50 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 10:58:50 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 10:58:50 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 10:58:51 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-11-03 10:59:08 INFO  Visualization:205 - Newsletter Created.
+2017-11-03 10:59:09 INFO  NewsLetter:38 - Revision ID for the newsletter: 77497
+2017-11-03 11:00:59 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 11:00:59 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 11:00:59 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 11:01:00 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-11-03 11:01:14 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-03 15:18:25 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:18:25 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:18:25 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:18:28 INFO  NewsLetter:36 - Updating Test...
+2017-11-03 15:19:57 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:19:57 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:19:57 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:19:57 INFO  NewsLetter:36 - Updating Test...
+2017-11-03 15:20:19 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:20:19 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:20:19 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:20:20 INFO  NewsLetter:36 - Updating Test...
+2017-11-03 15:20:56 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:20:56 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:20:56 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:20:57 INFO  NewsLetter:36 - Updating Test...
+2017-11-03 15:20:58 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-03 15:24:29 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:24:29 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:24:29 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:24:31 INFO  NewsLetter:36 - Updating Test...
+2017-11-03 15:25:07 INFO  Visualization:214 - Newsletter Created.
+2017-11-03 15:25:09 INFO  NewsLetter:38 - Revision ID for the newsletter: 77501
+2017-11-03 15:32:44 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:32:44 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:32:44 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:32:47 INFO  NewsLetter:36 - Updating Test...
+2017-11-03 15:33:28 INFO  Visualization:215 - Newsletter Created.
+2017-11-03 15:40:48 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:40:48 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:40:48 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:40:49 INFO  NewsLetter:36 - Updating Test...
+2017-11-03 15:45:44 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:45:44 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:45:44 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:45:47 INFO  NewsLetter:36 - Updating Test...
+2017-11-03 15:46:50 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-03 15:46:50 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-03 15:46:50 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-03 15:46:51 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 11:57:57 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 11:57:57 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 11:57:57 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 11:57:59 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 11:58:13 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-13 11:59:31 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 11:59:31 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 11:59:31 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 11:59:32 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 11:59:46 INFO  Visualization:218 - Newsletter Created.
+2017-11-13 11:59:47 INFO  NewsLetter:38 - Revision ID for the newsletter: 77627
+2017-11-13 12:01:03 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 12:01:03 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 12:01:03 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 12:01:04 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 12:01:17 INFO  Visualization:218 - Newsletter Created.
+2017-11-13 12:06:21 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 12:06:21 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 12:06:21 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 12:06:22 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 12:06:39 INFO  Visualization:218 - Newsletter Created.
+2017-11-13 12:08:39 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 12:08:39 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 12:08:39 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 12:08:39 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 12:08:53 INFO  Visualization:218 - Newsletter Created.
+2017-11-13 12:09:26 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 12:09:26 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 12:09:26 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 12:09:26 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 12:09:39 INFO  Visualization:218 - Newsletter Created.
+2017-11-13 13:01:00 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:01:00 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:01:00 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:01:01 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:02:01 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:02:01 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:02:01 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:02:01 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:07:09 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:07:09 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:07:09 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:07:10 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:07:22 INFO  Visualization:219 - Newsletter Created.
+2017-11-13 13:09:36 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:09:36 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:09:36 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:09:36 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:09:49 INFO  Visualization:219 - Newsletter Created.
+2017-11-13 13:12:18 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:12:18 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:12:18 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:12:19 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:13:40 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:13:40 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:13:40 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:13:41 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:13:54 INFO  Visualization:219 - Newsletter Created.
+2017-11-13 13:17:15 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:17:15 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:17:15 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:17:16 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:17:28 INFO  Visualization:219 - Newsletter Created.
+2017-11-13 13:19:34 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:19:34 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:19:34 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:19:35 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:19:47 INFO  Visualization:219 - Newsletter Created.
+2017-11-13 13:21:48 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:21:48 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:21:48 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:21:49 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:22:03 INFO  Visualization:219 - Newsletter Created.
+2017-11-13 13:22:04 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-13 13:27:28 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:27:28 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:27:28 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:27:29 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:27:41 INFO  Edit:81 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:27:41 INFO  Edit:41 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3E%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Activity+from+06+Nov+2017+-+13+Nov+2017&contentformat=text/x-wiki&section=new&title=Test
+2017-11-13 13:28:15 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:28:15 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:28:15 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:28:16 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:28:27 INFO  Edit:81 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:28:28 INFO  Edit:41 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3E%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Activity+from+06+Nov+2017+-+13+Nov+2017&contentformat=text/x-wiki&section=new&title=Test
+2017-11-13 13:28:28 INFO  Edit:43 - Edit Status : Success
+2017-11-13 13:28:28 INFO  Visualization:219 - Newsletter Created.
+2017-11-13 13:28:29 INFO  Edit:41 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3EActivity+from+06+Nov+2017+-+13+Nov+2017%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Weekly+Digest+%2806+Nov+2017+-+13+Nov+2017%29&contentformat=text/x-wiki&section=0&title=Test
+2017-11-13 13:28:29 INFO  Edit:43 - Edit Status : Success
+2017-11-13 13:28:29 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-13 13:30:31 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:30:31 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:30:31 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:30:31 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:30:44 INFO  Edit:82 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:30:44 INFO  Edit:41 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3E%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Activity+from+06+Nov+2017+-+13+Nov+2017&contentformat=text/x-wiki&section=new&title=Test
+2017-11-13 13:30:45 INFO  Edit:43 - Edit Status : Success
+2017-11-13 13:30:45 INFO  Visualization:219 - Newsletter Created.
+2017-11-13 13:30:45 INFO  Edit:41 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3EActivity+from+06+Nov+2017+-+13+Nov+2017%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Weekly+Digest+%2806+Nov+2017+-+13+Nov+2017%29&contentformat=text/x-wiki&section=0&title=Test
+2017-11-13 13:30:46 INFO  Edit:43 - Edit Status : Success
+2017-11-13 13:30:46 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-13 13:33:09 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:33:09 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:33:09 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:33:10 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:33:21 INFO  Edit:86 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:33:22 INFO  Edit:26 - Appending old newsletter to the bottom...
+2017-11-13 13:33:22 INFO  Edit:45 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3E%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Activity+from+06+Nov+2017+-+13+Nov+2017&contentformat=text/x-wiki&section=new&title=Test
+2017-11-13 13:33:23 INFO  Edit:47 - Edit Status : Success
+2017-11-13 13:33:23 INFO  Visualization:219 - Current newsletter Created.
+2017-11-13 13:33:23 INFO  Edit:28 - Writing current newsletter to the top...
+2017-11-13 13:33:23 INFO  Edit:45 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3EActivity+from+06+Nov+2017+-+13+Nov+2017%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Weekly+Digest+%2806+Nov+2017+-+13+Nov+2017%29&contentformat=text/x-wiki&section=0&title=Test
+2017-11-13 13:33:23 INFO  Edit:47 - Edit Status : Success
+2017-11-13 13:33:23 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-13 13:34:36 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:34:36 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:34:36 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:34:37 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:34:49 INFO  Edit:85 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:34:49 INFO  Edit:26 - Appending old newsletter to the bottom...
+2017-11-13 13:34:49 INFO  Edit:44 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3E%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Activity+from+06+Nov+2017+-+13+Nov+2017&contentformat=text/x-wiki&section=new&title=Test
+2017-11-13 13:34:50 INFO  Edit:46 - Edit Status : Success
+2017-11-13 13:34:50 INFO  Visualization:217 - Newsletter view object created.
+2017-11-13 13:34:50 INFO  Edit:28 - Writing current newsletter to the top...
+2017-11-13 13:34:50 INFO  Edit:44 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3EActivity+from+06+Nov+2017+-+13+Nov+2017%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Weekly+Digest+%2806+Nov+2017+-+13+Nov+2017%29&contentformat=text/x-wiki&section=0&title=Test
+2017-11-13 13:34:51 INFO  Edit:46 - Edit Status : Success
+2017-11-13 13:34:51 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-13 13:36:47 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:36:47 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:36:47 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:36:48 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:36:59 INFO  Edit:85 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:37:54 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:37:54 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:37:54 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:37:55 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:38:09 INFO  Edit:85 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:38:44 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:38:44 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:38:44 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:38:44 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:38:56 INFO  Edit:85 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:39:15 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:39:15 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:39:15 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:39:16 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:39:27 INFO  Edit:85 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:39:27 INFO  Visualization:217 - Newsletter view object created.
+2017-11-13 13:39:27 INFO  Edit:28 - Writing current newsletter to the top...
+2017-11-13 13:39:28 INFO  Edit:44 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3EActivity+from+06+Nov+2017+-+13+Nov+2017%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Weekly+Digest+%2806+Nov+2017+-+13+Nov+2017%29&contentformat=text/x-wiki&section=0&title=Test
+2017-11-13 13:39:29 INFO  Edit:46 - Edit Status : Success
+2017-11-13 13:39:29 INFO  NewsLetter:38 - Revision ID for the newsletter: 77646
+2017-11-13 13:41:18 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:41:18 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:41:18 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:41:19 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:41:31 INFO  Edit:85 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:41:31 INFO  Edit:26 - Appending old newsletter to the bottom...
+2017-11-13 13:41:31 INFO  Edit:44 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3E%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Activity+from+06+Nov+2017+-+13+Nov+2017&contentformat=text/x-wiki&section=new&title=Test
+2017-11-13 13:41:32 INFO  Edit:46 - Edit Status : Success
+2017-11-13 13:41:32 INFO  Visualization:217 - Newsletter view object created.
+2017-11-13 13:41:32 INFO  Edit:28 - Writing current newsletter to the top...
+2017-11-13 13:41:32 INFO  Edit:44 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3EActivity+from+06+Nov+2017+-+13+Nov+2017%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Weekly+Digest+%2806+Nov+2017+-+13+Nov+2017%29&contentformat=text/x-wiki&section=0&title=Test
+2017-11-13 13:41:33 INFO  Edit:46 - Edit Status : Success
+2017-11-13 13:41:33 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-13 13:43:52 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:43:52 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:43:52 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:43:52 INFO  NewsLetter:36 - Updating Test...
+2017-11-13 13:44:04 INFO  Edit:86 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Test
+2017-11-13 13:44:04 INFO  Edit:26 - Appending old newsletter to the bottom...
+2017-11-13 13:44:04 INFO  Edit:44 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3E%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Activity+from+06+Nov+2017+-+13+Nov+2017&contentformat=text/x-wiki&section=new&title=Test
+2017-11-13 13:44:05 INFO  Edit:46 - Edit Status : Success
+2017-11-13 13:44:05 INFO  Visualization:217 - Newsletter view object created.
+2017-11-13 13:44:05 INFO  Edit:28 - Writing current newsletter to the top...
+2017-11-13 13:44:06 INFO  Edit:44 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3EActivity+from+06+Nov+2017+-+13+Nov+2017%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Weekly+Digest+%2806+Nov+2017+-+13+Nov+2017%29&contentformat=text/x-wiki&section=0&title=Test
+2017-11-13 13:44:06 INFO  Edit:46 - Edit Status : Success
+2017-11-13 13:44:06 INFO  NewsLetter:38 - Revision ID for the newsletter: 0
+2017-11-13 13:45:20 INFO  Utils:67 - User and Bot Assertion Completed.
+2017-11-13 13:45:20 INFO  Utils:78 - testBot: LOGIN SUCCEEDED
+2017-11-13 13:45:20 INFO  NewsLetter:31 - LOGIN SUCCESS!
+2017-11-13 13:45:20 INFO  NewsLetter:36 - Updating Weekly_Digest...
+2017-11-13 13:45:33 INFO  Edit:86 - Query to get prev newsletter: http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page=Weekly_Digest
+2017-11-13 13:45:33 INFO  Visualization:217 - Newsletter view object created.
+2017-11-13 13:45:33 INFO  Edit:28 - Writing current newsletter to the top...
+2017-11-13 13:45:33 INFO  Edit:44 - Edit Query : http://wiki.linked.earth/wiki/api.php?format=json&action=edit&text=%3Cstrong%3EActivity+from+06+Nov+2017+-+13+Nov+2017%3C%2Fstrong%3E%3Cbr%2F%3E+%0A%3Cstrong%3E1+%3C%2Fstrong%3Enew+datasets.+%3Cbr%2F%3E+%0A%3Cstrong%3E8+%3C%2Fstrong%3Enew+contributors.+%3Cbr%2F%3E+%0A%3Cstrong%3E0+%3C%2Fstrong%3Enew+working+groups+were+created.++%3Cbr%2F%3E+%0A%3Cbr%2F%3E%3Cstrong%3ECongratulations+to+%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKhider+Khider%5D%3C%2Fspan%3E+for+being+the+top+contributor+with+91+contributions%21%3C%2Fstrong%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3EOther+top+contributors%3A+%3C%2Fstrong%3E%3Cbr%2F%3E*+%3Cstrong%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FUser%3AKMicha+KMicha%5D%3C%2Fspan%3E%3C%2Fstrong%3E++has+%3Cstrong%3E11%3C%2Fstrong%3E+contributions.+%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+datasets%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FPalmyra.Cobb.2013+Palmyra.Cobb.2013%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cstrong%3ENewly+added+users%3A%3C%2Fstrong%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FAndrew_T._Wittenberg+Andrew_T._Wittenberg%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FMichael_E._Mann+Michael_E._Mann%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKimberly_M._Cobb+Kimberly_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FR._Lawrence_Edwards+R._Lawrence_Edwards%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FHai_Cheng+Hai_Cheng%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FChristopher_D._Charles+Christopher_D._Charles%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FKim_M._Cobb+Kim_M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cspan+class%3D%27plainlinks%27%3E%5Bhttp%3A%2F%2Fwiki.linked.earth%2FK.M._Cobb+K.M._Cobb%5D%3C%2Fspan%3E%3Cbr%2F%3E%3Cbr%2F%3E%3Cbr%2F%3E&sectiontitle=Weekly+Digest+%2806+Nov+2017+-+13+Nov+2017%29&contentformat=text/x-wiki&section=0&title=Weekly_Digest
+2017-11-13 13:45:34 INFO  Edit:46 - Edit Status : Success
+2017-11-13 13:45:34 INFO  NewsLetter:38 - Revision ID for the newsletter: 77650
