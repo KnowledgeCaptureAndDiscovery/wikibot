@@ -23,6 +23,15 @@ public class Visualization {
 	String section;
 	String viewText;
 	String graphName;
+	
+	public Visualization() {
+		
+	}
+	public Visualization(String section, String viewText) {
+		super();
+		this.section = section;
+		this.viewText = viewText;
+	}
 	public static final Logger logger = Logger.getLogger(Visualization.class);
 
 	public void recentChangeView(ArrayList<Revision> revisionList) throws IOException {
@@ -113,8 +122,20 @@ public class Visualization {
 	public void display_newsletter(int numOfDays, HashMap<String, String> datasetLinks, HashMap<String, String> userLinks,
 			HashMap<String, String> workingGroupLinks, HashMap<Article, Integer> subWorkingGroupLinks,
 			HashMap<String, Integer> maxContributorsList) {
+		
+		DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+		Calendar cal = new GregorianCalendar();
+		Date today = new Date();
+		String start = dateFormat.format(today);
+
+		cal.setTime(today);
+		cal.add(Calendar.DAY_OF_MONTH, -1 * numOfDays);
+		Date from = cal.getTime();
+		String end = dateFormat.format(from);
+		
+		
 		String result = "";
-		result += "<strong>During the last " + numOfDays + " days: </strong><br/> " + "\n";
+		result += "<strong>Activity from " + end + " - "+ start + "</strong><br/> " + "\n";
 		result += "<strong>" + datasetLinks.size() + " </strong>new datasets. <br/> \n";
 		result += "<strong>" + userLinks.size() + " </strong>new contributors. <br/>" + " \n";
 		result += "<strong>" + workingGroupLinks.size() + " </strong>new working groups were created.  <br/> \n";
@@ -189,20 +210,11 @@ public class Visualization {
 			result += "<br/>";
 		}
 
-		this.viewText = result;
-		DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
-		Calendar cal = new GregorianCalendar();
-		Date today = new Date();
-		String start = dateFormat.format(today);
-
-		cal.setTime(today);
-		cal.add(Calendar.DAY_OF_MONTH, -1 * numOfDays);
-		Date from = cal.getTime();
-		String end = dateFormat.format(from);
+		this.viewText = result;		
 
 		this.section = "Weekly Digest (" + end + " - " + start + ")";
 
-		logger.info("Newsletter Created.");
+		logger.info("Newsletter view object created.");
 	}
 
 }

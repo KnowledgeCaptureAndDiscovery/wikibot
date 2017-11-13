@@ -58,7 +58,7 @@ public class NewsLetterBot extends Bot {
 		CategoryDefinition catDef = new CategoryDefinition();
 		Visualization view = new Visualization();
 		Edit edit = new Edit();
-		int deleteLastRevId, revid;
+		int deleteLastRevId, revid = 0, revidOld=0;
 
 		HashMap<String, String> datasetLinks = catDef.getAdditionToCategory("Category:Dataset_(L)", this.numOfDays);
 		HashMap<String, String> userLinks = catDef.getAdditionToCategory("Category:Person_(L)", this.numOfDays);
@@ -66,14 +66,24 @@ public class NewsLetterBot extends Bot {
 		HashMap<Article, Integer> subWorkingGroupLinks = catDef.getWGContributions(this.numOfDays);
 		HashMap<String, Integer> maxContributorsList = catDef.getMaxContibutors(this.numOfDays);
 
-		/*-----Remove previous Newsletter----*/
-		deleteLastRevId = catDef.getLastRevisionId(this.newsLetterPage);
-		edit.undoRevisions(deleteLastRevId, false, this, this.newsLetterPage);
-
-		/*-----Write newsletter in the newsletter page----*/
-		view.display_newsletter(this.numOfDays, datasetLinks, userLinks, workingGroupLinks, subWorkingGroupLinks,maxContributorsList);
-		revid = edit.edit(view, this, this.newsLetterPage);
+		/*-----Append previous Newsletter to the bottom----*/
 		
+		String oldNewsLetter = edit.getRevisionContent(this, this.newsLetterPage);
+		if (!oldNewsLetter.equals("")){
+			int startIndex = oldNewsLetter.indexOf("Activity");
+			int endIndex = oldNewsLetter.indexOf("</strong>");
+			if (startIndex >= 0 && endIndex >= 0){
+				String oldTitle = oldNewsLetter.substring(startIndex, endIndex);
+				oldNewsLetter = oldNewsLetter.replace(oldTitle, "");
+	
+				Visualization viewOld = new Visualization(oldTitle, oldNewsLetter);
+				revidOld = edit.edit(viewOld, this, this.newsLetterPage, "new");
+			}
+		}
+		/*-----Write current newsletter----*/
+		
+		view.display_newsletter(this.numOfDays, datasetLinks, userLinks, workingGroupLinks, subWorkingGroupLinks,maxContributorsList);
+		revid = edit.edit(view, this, this.newsLetterPage, "0");		
 		return revid;
 	}
 

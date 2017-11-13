@@ -3,44 +3,52 @@ package com.mainbot.components;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.mainbot.bots.Bot;
+import com.mainbot.bots.NewsLetterBot;
 import com.mainbot.utility.ConnectionRequests;
 import com.mainbot.utility.Constants;
 import com.mainbot.utility.Utils;
 
 public class Edit {
+	public final static Logger logger = Logger.getLogger(Edit.class);
 	static ConnectionRequests conn = new ConnectionRequests();
 	static Utils util = new Utils();
 	
-	public static int edit(Visualization view , Bot mainbot, String whichPage) throws JSONException, UnsupportedEncodingException{
+	public static int edit(Visualization view , Bot mainbot, String whichPage, String section) throws JSONException, UnsupportedEncodingException{
+		int revid = 0;
 		Constants.params.put("meta", "tokens");
 		Constants.params.put("action", "query");
-		
+		if (section.equals("new")){
+			logger.info("Appending old newsletter to the bottom...");
+		} else {
+			logger.info("Writing current newsletter to the top...");
+		}
 		
 		//String tokenQuery2 = WIKI_NAME + FORMAT_AND_API+ "&format=json&meta=tokens";
 		String tokenQuery = util.queryFormulation();
 		JSONObject getToken = ConnectionRequests.doPOSTJSON(tokenQuery, mainbot.getSessionID());
 		String token = getToken.getJSONObject("query").getJSONObject("tokens").get("csrftoken").toString();
-		//System.out.println(token);
 
-		
 		Constants.params.put("action", "edit");
 		Constants.params.put("text", URLEncoder.encode(view.viewText, "UTF-8"));
-//		Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
+		Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
 		Constants.params.put("contentformat", "text/x-wiki");
-		Constants.params.put("section", "0");
+		Constants.params.put("section", section);
 		Constants.params.put("title", whichPage);
 		
 		String editQuery = Utils.queryFormulation();
-		System.out.println(editQuery);
+		logger.info("Edit Query : " + editQuery);
 		JSONObject edit = conn.postFuncWithParams(editQuery, mainbot.getSessionID(), token);
-		System.out.println(edit);
-		return edit.getJSONObject("edit").getInt("newrevid");
+		logger.info("Edit Status : " + edit.getJSONObject("edit").getString("result"));
+		if (edit.getJSONObject("edit").has("newrevid")){
+			revid = edit.getJSONObject("edit").getInt("newrevid");
+		}
+		return revid;
 	}
-	
 	
 	public void undoRevisions(int revid, boolean undoafter, Bot mainbot, String whichPage) throws JSONException
 	{
@@ -71,6 +79,15 @@ public class Edit {
 		System.out.println(undo);
 	}
 	
+	public String getRevisionContent(Bot mainbot, String whichPage) throws JSONException{	
+		String oldNewsletterText = "";
+		String getRevContentQuery = "http://wiki.linked.earth/wiki/api.php?action=parse&format=json&disablelimitreport&section=0&prop=wikitext&page="+whichPage;
+		logger.info("Query to get prev newsletter: " + getRevContentQuery);
+		
+		JSONObject getRevContent = conn.doGETJSON(getRevContentQuery);
+		oldNewsletterText  = getRevContent.getJSONObject("parse").getJSONObject("wikitext").getString("*");
+		return oldNewsletterText;
+	}
 
 
 	

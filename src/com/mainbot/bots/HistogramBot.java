@@ -60,7 +60,7 @@ public class HistogramBot extends Bot{
 		
 		
 		view.recentChangeView(revisionList);
-		int revid = edit.edit(view, this, "Test"); //edit the wiki
+		int revid = edit.edit(view, this, "Test", "new"); //edit the wiki
 		
 		
 //		Scanner scanner = new Scanner(System.in);
@@ -79,7 +79,7 @@ public class HistogramBot extends Bot{
 		System.out.println("VIEW3 CREATED!!");
 		///////////////////////////////////////
 		
-		int revid2 = edit.edit(view2, this, "Test"); //edit the wiki
+		int revid2 = edit.edit(view2, this, "Test", "new"); //edit the wiki
 		
 		//int revid3 = edit.edit(view3, mainbot, "Test");
 		
