@@ -216,5 +216,20 @@ public class Visualization {
 
 		logger.info("Newsletter view object created.");
 	}
+	public void displayFigureText(HashMap<String, Integer> figureMap) {
+		// TODO Auto-generated method stub
+		
+		StringBuilder result = new StringBuilder();
+		for (Entry<String, Integer> entry : figureMap.entrySet()){
+			result.append("'''" + entry.getKey() + "'''").append(" : ");
+			result.append(entry.getValue()).append(" || ");
+		}
+		
+		System.out.println(result.toString());
+		
+		this.viewText = result.toString();
+		this.section = "'''Linked Earth Totals'''";
+		logger.info("Figure section data created");
+	}
 
 }
