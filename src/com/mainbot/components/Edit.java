@@ -22,20 +22,23 @@ public class Edit {
 		int revid = 0;
 		Constants.params.put("meta", "tokens");
 		Constants.params.put("action", "query");
-		if (section.equals("new")){
-			logger.info("Appending old newsletter to the bottom...");
-		} else {
-			logger.info("Writing current newsletter to the top...");
-		}
+		
 		
 		//String tokenQuery2 = WIKI_NAME + FORMAT_AND_API+ "&format=json&meta=tokens";
 		String tokenQuery = util.queryFormulation();
 		JSONObject getToken = ConnectionRequests.doPOSTJSON(tokenQuery, mainbot.getSessionID());
 		String token = getToken.getJSONObject("query").getJSONObject("tokens").get("csrftoken").toString();
-
+		
+		if (section.equals("new")){
+			logger.info("Appending old newsletter to the bottom...");
+			Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
+		} else {
+			logger.info("Writing current newsletter to the top...");
+		}
+		
 		Constants.params.put("action", "edit");
 		Constants.params.put("text", URLEncoder.encode(view.viewText, "UTF-8"));
-		Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
+
 		Constants.params.put("contentformat", "text/x-wiki");
 		Constants.params.put("section", section);
 		Constants.params.put("title", whichPage);
