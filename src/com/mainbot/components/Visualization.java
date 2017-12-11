@@ -225,7 +225,6 @@ public class Visualization {
 		String start = dateFormat.format(today);
 
 		String text = "== Linked Earth Totals == \n";
-//		String text = "";
 		
 		text += "''<small><small>Last changed On: "+ start+ "</small></small>''<br>"; 
 		
@@ -261,7 +260,6 @@ public class Visualization {
 
 		
 		this.section = "Linked Earth Totals";
-		System.out.println(this.viewText);
 		logger.info("Figure section data created");
 	}
 

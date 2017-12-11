@@ -30,10 +30,10 @@ public class Edit {
 		String token = getToken.getJSONObject("query").getJSONObject("tokens").get("csrftoken").toString();
 		
 		if (section.equals("new")){
-			logger.info("Appending old newsletter to the bottom...");
+			logger.info("Appending new section.");
 			Constants.params.put("sectiontitle", URLEncoder.encode(view.section, "UTF-8"));
 		} else {
-			logger.info("Writing current newsletter to the top...");
+			logger.info("Editing existing section or summary");
 		}
 		
 		Constants.params.put("action", "edit");
@@ -44,7 +44,6 @@ public class Edit {
 		Constants.params.put("title", whichPage);
 		
 		String editQuery = Utils.queryFormulation();
-		logger.info("Edit Query : " + editQuery);
 		JSONObject edit = conn.postFuncWithParams(editQuery, mainbot.getSessionID(), token);
 		logger.info("Edit Status : " + edit.getJSONObject("edit").getString("result"));
 		if (edit.getJSONObject("edit").has("newrevid")){

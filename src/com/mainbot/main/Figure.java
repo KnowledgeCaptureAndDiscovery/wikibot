@@ -17,8 +17,9 @@ public class Figure {
 		String username = "testBot";
 		String password = "testBot123";
 		String figPage = "Main_Page"; // TODO: Main page
+		String section = "10";
 		
-		FigureBot figBot = new FigureBot(username, password, figPage);
+		FigureBot figBot = new FigureBot(username, password, figPage, section);
 		Utils util = new Utils();
 
 		if (util.login(figBot)) {
