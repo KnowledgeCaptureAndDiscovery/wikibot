@@ -33,7 +33,7 @@ public class FigureBot extends Bot {
 		figureMap.put("Authors", getFigureOf("Person_(L)"));
 		figureMap.put("Compilation", getFigureOf("Compilation_(L)"));
 		figureMap.put("Publication", getFigureOf("Publication_(L)"));
-		figureMap.put("Observation", getFigureOf("InferredVariable_(L)"));
+		figureMap.put("Observation", getFigureOf("MeasuredVariable_(L)"));
 		figureMap.put("Datasets", getFigureOf("Dataset_(L)"));
 		figureMap.put("Working Groups", getFigureOf("Working_Group"));
 		figureMap.put("Contributors", getRegisteredUserCount());
